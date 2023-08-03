@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Bicycle Warehouse</title>
+  <link rel="stylesheet" href="styles/general.css">
+  <link rel="stylesheet" href="styles/header.css">
+  <link rel="stylesheet" href="styles/table.css">
+  <link rel="stylesheet" href="styles/table-actions.css">
+</head>
+<body>
+  
+  <header>
+    <h1 class="website-title">
+      מחסן אופניים
+    </h1>
+  </header>
+
+  <main>
+    <section>
+      <div class="table-actions">
+        <input class="search-bar" type="search" placeholder="חיפוש" id="" dir="rtl">
+        <button class="add-button">
+          <img class="plus-icon" src="resources/plus.svg" alt="">
+        </button>
+      </div>
+      
+      <table class="bicycle-table" dir="rtl">
+        <thead>
+          <tr>
+            <th class="visual-col" scope="col"></th>
+            <th class="status-col" scope="col">סטטוס</th>
+            <th class="person-col" scope="col">אחראי</th>
+            <th class="email-col" scope="col">מייל</th>
+            <th class="taken-col" scope="col">נלקחו</th>
+            <th class="maintained-col" scope="col">טופלו לאחרונה</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <!-- th scope=row for id for admins/devs? -->
+            <td>
+              <div class="bicycle-visual-info">
+                <img class="bicycle-image" src="resources/red-schwinn" alt="">
+                <span class="bicycle-visual-info-bottom">
+                  <span class="bicycle-color"></span>
+                  <span class="bicycle-text">schwinn</span>
+                </span>
+              </div>
+            </td>
+            <td>
+              <div class="status-container">
+                <span class="status-indicator"></span>
+                בטיפול
+              </div>
+            </td>
+            <td>אורן פנקס</td>
+            <td>orenp95&#8203@gmail.com</td>
+            <td>15/06/2023</td>
+            <td scope="row">11/07/2023</td>
+          </tr>
+          <tr>
+            <!-- th scope=row for id for admins/devs? -->
+            <td>
+              <div class="bicycle-visual-info">
+                <img class="bicycle-image" src="resources/red-schwinn" alt="">
+                <span class="bicycle-visual-info-bottom">
+                  <span class="bicycle-color"></span>
+                  <span class="bicycle-text">schwinn</span>
+                </span>
+              </div>
+            </td>
+            <td>
+              <div class="status-container">
+                <span class="status-indicator"></span>
+                בטיפול
+              </div>
+            </td>
+            <td>אורן פנקס</td>
+            <td>orenp95&#8203@gmail.com</td>
+            <td>15/06/2023</td>
+            <td scope="row">11/07/2023</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+  </footer>
+
+</body>
+</html>

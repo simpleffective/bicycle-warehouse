@@ -1,0 +1,11 @@
+header{
+  position: fixed;
+  background-color: #0F6D35;
+  height: 80px;
+  top:0; left: 0; right: 0;
+  text-align: center;
+  z-index: 100;
+}
+.website-title{
+  color:#FCB55F;
+}

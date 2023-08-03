@@ -1,0 +1,69 @@
+.bicycle-table{
+  position: relative;
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+}
+.visual-col{
+  width:30%;
+}
+.person-col{
+  width: 15%;
+}
+.email-col{
+  width: 20%;
+}
+.status-col{
+  width: 10%;
+}
+.taken-col{
+  width: 12.5%;
+}
+.maintained-col{
+  width: 12.5%;
+}
+tbody tr{
+  /* doesnt work when i enlarge flexbox!!*/
+  min-height: 50px; 
+}
+td,th{
+  border: 2px solid #0F6D35;
+  border-collapse: collapse;
+  text-align: center;
+  text-overflow: ellipsis;
+}    
+.status-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  row-gap: 10px;
+}
+.bicycle-visual-info{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.bicycle-visual-info-bottom{
+  display: flex;
+  align-items: center;
+  width: 80%;
+  justify-content: space-evenly;
+  margin: 10px 0;
+}
+.bicycle-image{
+  width: 100%;
+}
+.bicycle-color{
+  border: 1px solid black;
+  width: 50px;
+  height: 20px;
+  background-color: rgb(220,50,0);
+}
+.status-indicator{
+  border: 1px solid black;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: orange;
+}
