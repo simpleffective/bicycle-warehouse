@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="styles/header.css">
   <link rel="stylesheet" href="styles/table.css">
   <link rel="stylesheet" href="styles/table-actions.css">
+  <link rel="script" href="scripts/main.js">
 </head>
 <body>
   
@@ -83,11 +84,18 @@
           </tr>
         </tbody>
       </table>
+      <input type="date" id="dateinput"/>
     </section>
   </main>
 
   <footer>
   </footer>
-
+  <script>
+    const filepath = './data/demo-short.csv'
+    const reader = new FileReader();
+    const tableData = reader.readAsText(filepath)
+    
+    
+  </script>
 </body>
 </html>
