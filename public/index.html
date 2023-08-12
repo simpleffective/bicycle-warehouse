@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="styles/header.css">
   <link rel="stylesheet" href="styles/table.css">
   <link rel="stylesheet" href="styles/table-actions.css">
+  <link rel="stylesheet" href="styles/popup.css">
   <link rel="script" href="scripts/main.js">
 </head>
 <body>
@@ -22,8 +23,44 @@
       <div class="table-actions">
         <input class="search-bar" type="search" placeholder="חיפוש" id="" dir="rtl">
         <button class="add-button">
-          <img class="plus-icon" src="resources/plus.svg" alt="">
+          <img class="plus-icon" src="resources/pluspng.png" alt="">
         </button>
+      </div>
+
+      <div id="add-bicycle-popup">
+        <form action="/post-bicycle" method="POST">
+
+          <div dir="rtl">
+            <input type="file" name="" id="">
+          </div>
+
+          <div dir="rtl" class="form-text-input">
+            <label for="textId">סימן זיהוי:</label>
+            <input type="text" name="textId" id="textId" placeholder="מותג, תווית,..." required>
+          </div>
+
+          <br>
+          
+          <div dir="rtl" class="form-text-input">
+            <label for="person">אחראי:</label>
+            <input type="text" name="person" id="person" placeholder="ישראל ישראלי" required>
+          </div>
+          
+          <br>
+          
+          <div dir="rtl" class="form-text-input">
+            <label for="email">מייל:</label>
+            <input type="email" name="email" id="email" placeholder="israel@pnimeet.com" required>
+          </div>
+
+          <br>
+
+          <div dir="rtl" class="form-buttons">
+            <input type="reset">
+            <input type="submit">
+          </div>
+
+        </form>
       </div>
       
       <table class="bicycle-table" dir="rtl">
@@ -90,6 +127,25 @@
 
   <footer>
   </footer>
-  <script src="script.js"></script>
+  <script>
+    console.log('sadsnajkdnasjk')
+    const form = document.querySelector('form')
+
+    form.addEventListener('submit', (evt) => {
+      // event.preventDefault();
+      const formData = new FormData(form)
+      console.log(formData)
+      const formDataObject = {};
+
+      // Convert FormData to a plain JavaScript object
+      formData.forEach((value, key) => {
+        formDataObject[key] = value;
+      });
+
+      console.log('Form Data:', formDataObject)
+
+    })
+    
+  </script>
 </body>
 </html>
