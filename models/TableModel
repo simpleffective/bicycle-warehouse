@@ -1,0 +1,9 @@
+
+const fsPromises = require('fs/promises')
+const path = require('path')
+
+function getTableData() {
+  return fsPromises.readFile(path.join(__dirname, '/demo-data/demo-short.csv'), {encoding: 'utf8'})
+}
+
+module.exports.getTableData = getTableData
