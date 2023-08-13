@@ -1,5 +1,6 @@
 const {
   getTableData,
+  postBicycle,
   servePublicFiles
 } = require('./handlers.js')
 
@@ -19,8 +20,12 @@ const server = require('http').createServer((req,res) => {
 
   // Set clean url
   req.url = newPath;
+
+  // Route
   if (req.url === 'get-table-data'){
     getTableData(req, res)
+  } else if (req.url === 'post-bicycle' && req.method === 'POST') {
+    postBicycle(req, res)
   } else {
     servePublicFiles(req, res)
   }

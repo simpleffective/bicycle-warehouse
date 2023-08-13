@@ -20,18 +20,20 @@
 
   <main>
     <section>
-      <div class="table-actions">
-        <input class="search-bar" type="search" placeholder="חיפוש" id="" dir="rtl">
-        <button class="add-button">
+      <div class="table-actions" dir="rtl">
+        <button id="list-bicycle-button">
           <img class="plus-icon" src="resources/pluspng.png" alt="">
         </button>
+        <input class="search-bar" type="search" placeholder="חיפוש" id="" dir="rtl">
+        <video autoplay></video>
       </div>
 
       <div id="add-bicycle-popup">
-        <form action="/post-bicycle" method="POST">
+        <form id="add-bicycle-form" action="/post-bicycle" method="POST">
 
           <div dir="rtl">
-            <input type="file" name="" id="">
+            <!-- <input type="image" name="" id=""> -->
+            <button id="form-add-image"> Browse... </button>
           </div>
 
           <div dir="rtl" class="form-text-input">
@@ -127,24 +129,24 @@
 
   <footer>
   </footer>
-  <script>
-    console.log('sadsnajkdnasjk')
-    const form = document.querySelector('form')
+  <script src="script.js">
+    // console.log('sadsnajkdnasjk')
+    // const form = document.querySelector('form')
 
-    form.addEventListener('submit', (evt) => {
-      // event.preventDefault();
-      const formData = new FormData(form)
-      console.log(formData)
-      const formDataObject = {};
+    // form.addEventListener('submit', (evt) => {
+    //   // event.preventDefault();
+    //   const formData = new FormData(form)
+    //   console.log(formData)
+    //   const formDataObject = {};
 
-      // Convert FormData to a plain JavaScript object
-      formData.forEach((value, key) => {
-        formDataObject[key] = value;
-      });
+    //   // Convert FormData to a plain JavaScript object
+    //   formData.forEach((value, key) => {
+    //     formDataObject[key] = value;
+    //   });
 
-      console.log('Form Data:', formDataObject)
+    //   console.log('Form Data:', formDataObject)
 
-    })
+    // })
     
   </script>
 </body>

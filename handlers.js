@@ -9,6 +9,23 @@ async function getTableData(req, res) {
   res.end(tableData)
 }
 
+function postBicycle(req, res) {
+
+  let data = ''
+
+  req.on('data', chunk => {
+    data += chunk
+  });
+
+  req.on('end', () => {
+    const parsedData = JSON.parse(data);
+    console.log('Received POST data:', parsedData);
+    res.writeHead(200, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify({ message: 'Data received successfully' }));
+  });
+
+}
+
 function servePublicFiles(req, res) {
 
   // Make public files base path
@@ -35,7 +52,9 @@ function servePublicFiles(req, res) {
 })
 
 }
+
 module.exports = {
   getTableData,
+  postBicycle,
   servePublicFiles,
 }
