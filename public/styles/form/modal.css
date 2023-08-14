@@ -1,0 +1,22 @@
+#modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  padding: 20px;
+  box-shadow: 0 0 20px rgb(0,0,0,0.40);
+  min-width: 200px;
+  background-color: rgb(83, 160, 107);
+  border: 2px solid black;
+  border-radius: 2px;
+}
+
+#modal h1{
+  color:lightyellow;
+  text-align: center;
+  border-bottom: 1px solid white;
+  padding-bottom: 25px;
+  margin: 0;
+  margin-bottom: 18px;
+}

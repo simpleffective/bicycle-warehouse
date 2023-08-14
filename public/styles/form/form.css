@@ -1,0 +1,87 @@
+#bicycle-form {
+  line-height: 24px;
+}
+#media-buttons-container{
+  --button-padding: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1em;
+  font-size: small;
+}
+#media-buttons-container button{
+  width: 4em;
+  padding-top: 4em;
+  margin: 0;
+  border: 0;
+  border-radius: 2px;
+  box-shadow: 0px 0px 4px rgba(0,0,0,0.4);
+  background-image: url(../../resources/greenQR.jpg);
+  background-size: 100%;
+  cursor: pointer;
+}
+#media-buttons-container span {
+  color:greenyellow;
+}
+#barcode-container {
+  padding: var(--button-padding);
+}
+#capture-container {
+  width: 4em;
+  padding: var(--button-padding);
+  display: flex;
+  flex-direction: column;
+  white-space: nowrap;
+  align-items: center;
+}
+#capture-container input[type="file"] {
+  display: none;
+}
+#capture-container label {
+  border: 1px solid black;
+  /* padding: 0px 4px; */
+  height: 30px;
+  width: 80%;
+  background-image: url(../../resources/bicycleCamera1.jpg);
+  background-size: 100%;
+  cursor: pointer;
+}
+
+.text-input-container {
+  display: grid;
+  grid-template-columns: 26% 1fr;
+  white-space: nowrap;
+  text-align: end;
+  gap: 0.5em;
+}
+
+.text-input-container label{
+  font-size: 20px;
+  color: lightyellow;
+}
+.text-input-container input {
+  flex: 1;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid black;
+  letter-spacing: 0.5px;
+  padding-right: 4px;
+}
+.text-input-container input::placeholder {
+  color: var(--pnimeet-yellow-dull);
+  opacity: 1;
+  font-size: 1em;
+}
+#form-buttons-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 15px;
+}
+#form-buttons-container input {
+  margin: 0;
+  padding: 5px 8px;
+  border-radius: 2px;
+  background-color: var(--pnimeet-yellow);
+  box-shadow: 0px 1px 1px rgba(0,0,0,0.35);
+}

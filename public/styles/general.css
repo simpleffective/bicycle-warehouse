@@ -4,3 +4,24 @@ body{
   background-color: #0F6D3533;
   height: 3000px;
 }
+
+.show-block {
+  display: block;
+}
+
+.bg{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+}
+
+* {
+  --pnimeet-yellow: #FCB55F;
+  --pnimeet-yellow-dull: #ECB57F;
+  --pnimeet-green: #0F6D35;
+}

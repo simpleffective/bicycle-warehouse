@@ -7,8 +7,10 @@
   <link rel="stylesheet" href="styles/header.css">
   <link rel="stylesheet" href="styles/table.css">
   <link rel="stylesheet" href="styles/table-actions.css">
-  <link rel="stylesheet" href="styles/popup.css">
+  <link rel="stylesheet" href="styles/form/modal.css">
+  <link rel="stylesheet" href="styles/form/form.css">
   <link rel="script" href="scripts/main.js">
+  <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
 </head>
 <body>
   
@@ -25,39 +27,47 @@
           <img class="plus-icon" src="resources/pluspng.png" alt="">
         </button>
         <input class="search-bar" type="search" placeholder="חיפוש" id="" dir="rtl">
-        <video autoplay></video>
+        <div id="reader" style="width: 600px;"></div>
       </div>
 
-      <div id="add-bicycle-popup">
-        <form id="add-bicycle-form" action="/post-bicycle" method="POST">
+      <div id="modal" style="display: none;">
+        <h1>רישום אופניים</h1>
+        <form dir="rtl" id="bicycle-form" action="/post-bicycle" method="POST">
+          
+          <div dir="rtl" id="media-buttons-container">
+            <div id="bardcode-container">
+              <button>
+              </button>
+              <span>&#x2713</span>
+            </div>
 
-          <div dir="rtl">
-            <!-- <input type="image" name="" id=""> -->
-            <button id="form-add-image"> Browse... </button>
+            <div dir="rtl" id="capture-container">
+              <input type="file"
+              name="capture" id="capture"
+              accept="image/*"
+              capture >
+              <!-- <label for="capture">תמונה של האופניים</label> -->
+              <label for="capture">
+              </label>
+            </div>
           </div>
 
-          <div dir="rtl" class="form-text-input">
-            <label for="textId">סימן זיהוי:</label>
+          <div dir="rtl" class="text-input-container">
+            <label for="textId">סימן זיהוי</label>
             <input type="text" name="textId" id="textId" placeholder="מותג, תווית,..." required>
           </div>
 
-          <br>
-          
-          <div dir="rtl" class="form-text-input">
-            <label for="person">אחראי:</label>
+          <div dir="rtl" class="text-input-container">
+            <label for="person">אחראי</label>
             <input type="text" name="person" id="person" placeholder="ישראל ישראלי" required>
           </div>
-          
-          <br>
-          
-          <div dir="rtl" class="form-text-input">
-            <label for="email">מייל:</label>
+                    
+          <div dir="rtl" class="text-input-container">
+            <label for="email">מייל</label>
             <input type="email" name="email" id="email" placeholder="israel@pnimeet.com" required>
           </div>
 
-          <br>
-
-          <div dir="rtl" class="form-buttons">
+          <div dir="rtl" id="form-buttons-container">
             <input type="reset">
             <input type="submit">
           </div>
@@ -129,25 +139,9 @@
 
   <footer>
   </footer>
-  <script src="script.js">
-    // console.log('sadsnajkdnasjk')
-    // const form = document.querySelector('form')
-
-    // form.addEventListener('submit', (evt) => {
-    //   // event.preventDefault();
-    //   const formData = new FormData(form)
-    //   console.log(formData)
-    //   const formDataObject = {};
-
-    //   // Convert FormData to a plain JavaScript object
-    //   formData.forEach((value, key) => {
-    //     formDataObject[key] = value;
-    //   });
-
-    //   console.log('Form Data:', formDataObject)
-
-    // })
-    
+  <!-- <script src="script.js"></script> -->
+  <script>
+    console.log(document.querySelector('form').childNodes)
   </script>
 </body>
 </html>
