@@ -9,7 +9,6 @@
   <link rel="stylesheet" href="styles/table-actions.css">
   <link rel="stylesheet" href="styles/form/modal.css">
   <link rel="stylesheet" href="styles/form/form.css">
-  <link rel="script" href="scripts/main.js">
   <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
 </head>
 <body>
@@ -23,7 +22,7 @@
   <main>
     <section>
       <div class="table-actions" dir="rtl">
-        <button id="list-bicycle-button">
+        <button id="add-bicycle-button">
           <img class="plus-icon" src="resources/pluspng.png" alt="">
         </button>
         <input class="search-bar" type="search" placeholder="חיפוש" id="" dir="rtl">
@@ -137,11 +136,10 @@
     </section>
   </main>
 
+  <div id="blur" class="blur-bg" style="display: none;"></div>
+
   <footer>
   </footer>
-  <!-- <script src="script.js"></script> -->
-  <script>
-    console.log(document.querySelector('form').childNodes)
-  </script>
+  <script type="module" src="./js/main.js"></script>
 </body>
 </html>

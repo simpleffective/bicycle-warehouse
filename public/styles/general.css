@@ -9,7 +9,7 @@ body{
   display: block;
 }
 
-.bg{
+.blur-bg{
   position: fixed;
   top: 0;
   left: 0;

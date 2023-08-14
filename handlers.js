@@ -1,4 +1,5 @@
 
+const { determineMIME } = require('./util.js')
 const path = require('path')
 const fs = require('fs')
 const TableModel = require('./models/TableModel')
@@ -37,7 +38,7 @@ function servePublicFiles(req, res) {
     filePath = path.join(basePath, 'index.html')
   else
     filePath = path.join(basePath, req.url)
-  
+
   // Try to serve File
   fs.access(filePath, fs.constants.F_OK, (err) => {
     if (err) {
@@ -46,11 +47,15 @@ function servePublicFiles(req, res) {
       res.end('404 - Not Found')
     } else {
       // Read and serve the file
+
+      // Set the Content-Type header
+      let contentType = determineMIME(path.extname(filePath))
+      res.setHeader('Content-Type', contentType)
+  
       const fileStream = fs.createReadStream(filePath);
       fileStream.pipe(res);
     }
-})
-
+  })
 }
 
 module.exports = {
