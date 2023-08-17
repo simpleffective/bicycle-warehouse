@@ -4,8 +4,11 @@ header{
   height: 80px;
   top:0; left: 0; right: 0;
   text-align: center;
-  z-index: 100;
+  z-index: var(--z-index-header);
+  display: grid;
+  place-items: center;
 }
 .website-title{
-  color:var(--pnimeet-yellow);
+  color:var(--pnimeet-yellow);  
+  font-size: 2em;
 }

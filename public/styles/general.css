@@ -13,10 +13,17 @@ img, picture, svg, video {
   max-width: 100%;
 }
 
-* {
+* /* Colors */ {
   --pnimeet-yellow: #FCB55F;
   --pnimeet-yellow-dull: #ECB57F;
   --pnimeet-green: #0F6D35;
+}
+
+* /* z-index */ {
+  --z-index-header: 10;
+  --z-index-image-popup: 15;
+  --z-index-blur: 16;
+  --z-index-modal: 20;
 }
 
 body{
@@ -33,10 +40,11 @@ body{
 }
 
 .blur-bg{
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 5;
+  z-index: var(--z-index-blur);
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.4);

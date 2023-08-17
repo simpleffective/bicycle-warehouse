@@ -29,7 +29,7 @@
         <div id="reader" style="width: 600px;"></div>
       </div>
 
-      <div id="modal" style="display: ;">
+      <div id="modal" style="display: none;">
         <h1>רישום אופניים</h1>
         <form dir="rtl" id="bicycle-form" action="/post-bicycle" method="POST">
           
@@ -75,54 +75,61 @@
       </div>
       
       <table class="bicycle-table" dir="rtl">
+        <colgroup>
+          <col class="visual-col">
+          <col class="status-col">
+          <col class="person-col">
+          <col class="email-col">
+          <col class="taken-col">
+          <col class="maintained-col">
+        </colgroup>
         <thead>
           <tr>
-            <th class="visual-col" scope="col"></th>
-            <th class="status-col" scope="col">סטטוס</th>
-            <th class="person-col" scope="col">אחראי</th>
-            <th class="email-col" scope="col">מייל</th>
-            <th class="taken-col" scope="col">נלקחו</th>
-            <th class="maintained-col" scope="col">טופלו לאחרונה</th>
+            <th scope="col"></th>
+            <th scope="col">סטטוס</th>
+            <th scope="col">אחראי</th>
+            <th scope="col">מייל</th>
+            <th scope="col">נלקחו</th>
+            <th scope="col">טופלו לאחרונה</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <!-- th scope=row for id for admins/devs? -->
             <td>
-              <div class="bicycle-visual-info">
+              <div class="visual-info-container">
+                <span class="bicycle-color"></span>
                 <img class="bicycle-image" src="./resources/red-schwinn" alt="">
-                <span class="bicycle-visual-info-bottom">
-                  <span class="bicycle-color"></span>
-                  <span class="bicycle-text">schwinn</span>
-                </span>
+                <span class="bicycle-text">האופניים האדומות המדהימות ביותר שיש</span>
+              </div>
+              <div class="image-popup">
+                <img class="bicycle-image" src="./resources/red-schwinn" alt="">
               </div>
             </td>
             <td>
               <div class="status-container">
-                <span class="status-indicator"></span>
-                בטיפול
+                <span class="status-indicator yGrad"></span>
+                <span class="status">בטיפול</span>
               </div>
             </td>
             <td>אורן פנקס</td>
-            <td>orenp95&#8203@gmail&#8203.com</td>
+            <td>orenp95&#8203@gmail.com</td>
             <td>15/06/2023</td>
             <td scope="row">11/07/2023</td>
           </tr>
           <tr>
             <!-- th scope=row for id for admins/devs? -->
             <td>
-              <div class="bicycle-visual-info">
-                <img class="bicycle-image" src="resources/red-schwinn" alt="">
-                <span class="bicycle-visual-info-bottom">
-                  <span class="bicycle-color"></span>
-                  <span class="bicycle-text">schwinn</span>
-                </span>
+              <div class="visual-info-container">
+                <span class="bicycle-color"></span>
+                <img class="bicycle-image" src="./resources/red-schwinn" alt="">
+                <span class="bicycle-text">Trek</span>
               </div>
             </td>
             <td>
               <div class="status-container">
-                <span class="status-indicator"></span>
-                בטיפול
+                <span class="status-indicator yGrad"></span>
+                <span class="status">בטיפול</span>
               </div>
             </td>
             <td>אורן פנקס</td>
@@ -132,11 +139,10 @@
           </tr>
         </tbody>
       </table>
-      <input type="date" id="dateinput"/>
     </section>
   </main>
 
-  <div id="blur" class="blur-bg" style="display: none;"></div>
+  <div id="blur" class="blur-bg"></div>
 
   <footer>
   </footer>
