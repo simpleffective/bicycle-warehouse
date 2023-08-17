@@ -1,8 +1,31 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+img, picture, svg, video {
+  display: block;
+  max-width: 100%;
+}
+
+* {
+  --pnimeet-yellow: #FCB55F;
+  --pnimeet-yellow-dull: #ECB57F;
+  --pnimeet-green: #0F6D35;
+}
+
 body{
   padding-top: 90px;
   font-family: Arial, Helvetica, sans-serif;
   background-color: #0F6D3533;
-  height: 3000px;
+  min-height: 100vh;
+  height: 1500px;
+  line-height: 1;
 }
 
 .show-block {
@@ -20,8 +43,3 @@ body{
   backdrop-filter: blur(10px);
 }
 
-* {
-  --pnimeet-yellow: #FCB55F;
-  --pnimeet-yellow-dull: #ECB57F;
-  --pnimeet-green: #0F6D35;
-}

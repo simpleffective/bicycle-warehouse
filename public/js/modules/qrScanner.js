@@ -22,7 +22,4 @@ let html5QrcodeScanner = new Html5QrcodeScanner(
   { fps: 10, qrbox: {width: 250, height: 250} },
   /* verbose= */ false);
 
-addButton.addEventListener('click', () => {
-  reader.style.display = readerDisplay;
-  html5QrcodeScanner.render(onScanSuccess, null);
-});
+
