@@ -1,6 +1,12 @@
 section:first-child {
   margin: 0px 1vw;
 }
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 .bicycle-table{
   table-layout: fixed;
