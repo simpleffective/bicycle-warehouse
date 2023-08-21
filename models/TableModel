@@ -3,7 +3,7 @@ const fsPromises = require('fs/promises')
 const path = require('path')
 
 function getTableData() {
-  return fsPromises.readFile(path.join(__dirname, '/demo-data/demo-short.json'), {encoding: 'utf8'})
+  return fsPromises.readFile(path.join(__dirname, '/demo-data/demo-short-reformatted.json'), {encoding: 'utf8'})
 }
 
 module.exports.getTableData = getTableData

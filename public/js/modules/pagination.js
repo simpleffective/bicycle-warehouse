@@ -1,49 +1,63 @@
 
+import { renderTablePage } from './table.js'
+export {
+  init
+}
 
+const ROWS_PER_PAGE = 12;
+let currentPage = 1;  // initial page
+const numbers = document.getElementById('pagination-numbers-container');
+// const paginationLength = numbers.querySelectorAll('button').length
+const paginationLength = 2;
+const prev = document.getElementById('prev')
+const next = document.getElementById('next')
+let prevButton = null;
+let currButton = null;
+let numRows = 0;
+let numPages = 0;
 
-export default class Pagination {
-  static #ROWS_PER_PAGE = 12;
+function init(numRows) {
 
-  constructor(table, numRows) {
-    this.#table = table;
-    this.#numRows = numRows;
-    this.#currentPage = 0;
-  }
-
-  render() {
-
-    this.attachListeners();
-  }
-
-  attachListeners() {
-    
-  }
-
+  numRows = numRows;
+  numPages = Math.ceil(numRows / ROWS_PER_PAGE);
   
+  prev.addEventListener('click', onPageRequest)
+  next.addEventListener('click', onPageRequest)
 
-  getRowsToDisplay() {
-    return 
-  }
+  drawNumberButtons()
+}
 
-  numOfPages() {
-    return Math.ceil(numRows / ROWS_PER_PAGE);
+function drawNumberButtons() {
+  numbers.innerHTML = '';
+  let firstButton = Math.min(Math.max(1, currentPage - 2), numRows - 4)
+  for (let i = firstButton ; i < firstButton + Math.min(numPages, paginationLength) ; i++) {
+    let button = document.createElement('button');
+    button.value = button.textContent = i;
+    button.addEventListener('click', onPageRequest);
+    button.classList.add('pagination-button')
+    if (i === currentPage)
+      button.classList.add('current-page-button')
+    numbers.appendChild(button);
   }
+}
 
-  onRowsChanged(numRows) {
-    this.#currentPage = 0;
-    this.setNumRows(numRows);
-  }
+function onPageRequest(evt) {
 
-  setNumRows(num) {
-    this.#numRows = num;
-  }
+  let page = evt.target.value;
+  if (page === '<')
+    page = currentPage - 1;
+  else if (page === '>')
+    page = currentPage + 1
 
-  setCurrentPage(num) {
-    // check?
-    this.#currentPage = num;
-  }
-  
-  getCurrentPage() {
-    return this.#currentPage;
-  }
+  page = parseInt(page);
+  if (page === currentPage || numPages < page || page < 1)
+    return
+
+  currentPage = page;
+
+  // notify table
+  renderTablePage(currentPage);
+
+  // re-draw number buttons
+  drawNumberButtons();
 }

@@ -1,105 +1,88 @@
-import { EventEmitter } from 'stream';
-import Pagination from './pagination.js'
+import { init as initPagination } from './pagination.js'
+export {
+  renderTablePage,
+  init
+}
 
-export default function initTable() {
+const tbody = document.querySelector('table').querySelector('tbody')
+const ROWS_PER_PAGE = 12;
+let tableData = null;
+
+function init() {
   const TABLE_DATA_URL = '/get-table-data'
 
   fetch(TABLE_DATA_URL)
   .then( (response) => response.json())
   .then( (data) => {
-    fillTable(data)
+    debugger
+    tableData = data;
+    renderTablePage(1);
+    initPagination(tableData.length)
   })
 }
 
-class Table {
+function tableAction(filter) {
+  // sort, filter, etc...
+  // let filteredData = ... ;
+  // initPagination(filteredData)
+}
 
-  static #ROWS_PER_PAGE = 12;
+function renderEmptyTable() {
+  tbody.innerHTML = '';
+  // TODO nicer in the future
+}
 
-  constructor(thead, tbody, pagination, data) {
-    this.#tbody = tbody;
-    this.#thead = thead;
-    this.#rows = data;
-    this.#displayedRows = data;
+function renderTablePage(page) {
 
-    this.#currentPage = 0;
-    // this.pagination = new Pagination();
+  if (tableData.length == 0) {
+    renderEmptyTable();
+    return;
   }
 
-  render() {
-    this.renderHeader();
-    this.renderRows();
-    this.renderPagination();
+  let start = (page - 1) * ROWS_PER_PAGE
+  let end = start + ROWS_PER_PAGE
+  tableData.slice(start, end).forEach(row => {
+    let rowElement = tbody.insertRow();
+    let i = 0;
+    Object.keys(row).forEach(header => {
+      let cell = rowElement.insertCell(i++);
+      let cellData = row[header];
+      cell.innerHTML = produceCellHTML(header, cellData)
+    });
+  })
+}
+
+function produceCellHTML(header, cellData) {
+  let html = '';
+  switch(header) {
+    case 'visual':
+      html = 
+      `<div class="visual-info-container">
+        <span class="bicycle-color"></span>
+        <img class="bicycle-image" src="./resources/${cellData.imgName}" alt="">
+        <span class="bicycle-text"${cellData.idText}</span>
+      </div>
+      <div class="image-popup">
+        <img class="bicycle-image" src="./resources/red-schwinn" alt="">
+      </div>`
+      break;
+    case 'status':
+      html = 
+      `<div class="status-container">
+        <span class="status-indicator yGrad"></span>
+        <span class="status">${cellData}</span>
+      </div>`
+      break;
+    default:
+      html = cellData;
+    // case 'person':
+    //   break;
+    // case 'email':
+    //   break;
+    // case 'takenDate':
+    //   break;
+    // case 'maintainedDate':
+    //   break;
+    return html;
   }
-
-  rowsToRender() {
-    start = (currentPage - 1) * ROWS_PER_PAGE
-    end = start + ROWS_PER_PAGE
-    return start, end
-  }
-
-  tableAction(filter) {
-    this.displayedRows = this.rows.filter(filter);
-    this.onRowsChanged();
-  }
-
-  onRowsChanged() {
-    currentPage = 0;
-    this.renderRows();
-    this.renderPagination();
-  }
-
-  onPageChanged() {
-    this.renderRows();
-  }
-
-  renderPagination() {
-    // html
-    // listeners
-  }
-
-  renderHeader() {
-
-  }
-
-  renderEmptyTable() {
-
-  }
-
-  renderRows() {
-    if (this.displayedRows.length == 0) {
-      this.renderEmptyTable();
-      return;
-    }
-    [start, end] = this.rowsToRender();
-    this.displayedRows.slice(start, end).forEach(row => {
-      let rowElement = tbody.insertRow();
-      let i = 0;
-      Object.keys(row).forEach(header => {
-        let cell = rowElement.insertCell(i++);
-        let cellData = row[header];
-        cell.innerHTML = produceCellHTML(header, cellData)
-      });
-    })
-  }
-
-  produceCellHTML(header, cellData) {
-    switch(header) {
-      case 'visual':
-        break;
-      case 'status':
-        break;
-      default:
-        return cellData;
-        break;
-      // case 'person':
-      //   break;
-      // case 'email':
-      //   break;
-      // case 'takenDate':
-      //   break;
-      // case 'maintainedDate':
-      //   break;
-    }
-  }
-
 }

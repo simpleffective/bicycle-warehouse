@@ -1,4 +1,4 @@
-import initTable from './modules/table.js'
+import {init as initTable} from './modules/table.js'
 import {form, initForm} from './modules/form.js'
 const modal = document.getElementById('modal')
 // import qrScanner from './modules/qrScanner'
