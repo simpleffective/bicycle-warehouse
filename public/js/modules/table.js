@@ -14,7 +14,6 @@ function init() {
   fetch(TABLE_DATA_URL)
   .then( (response) => response.json())
   .then( (data) => {
-    debugger
     tableData = data;
     renderTablePage(1);
     initPagination(tableData.length)
@@ -33,11 +32,13 @@ function renderEmptyTable() {
 }
 
 function renderTablePage(page) {
-
+  
   if (tableData.length == 0) {
     renderEmptyTable();
     return;
   }
+
+  tbody.innerHTML = '';
 
   let start = (page - 1) * ROWS_PER_PAGE
   let end = start + ROWS_PER_PAGE
@@ -60,7 +61,7 @@ function produceCellHTML(header, cellData) {
       `<div class="visual-info-container">
         <span class="bicycle-color"></span>
         <img class="bicycle-image" src="./resources/${cellData.imgName}" alt="">
-        <span class="bicycle-text"${cellData.idText}</span>
+        <span class="bicycle-text">${cellData.idText}</span>
       </div>
       <div class="image-popup">
         <img class="bicycle-image" src="./resources/red-schwinn" alt="">
@@ -83,6 +84,6 @@ function produceCellHTML(header, cellData) {
     //   break;
     // case 'maintainedDate':
     //   break;
-    return html;
   }
+  return html;
 }
