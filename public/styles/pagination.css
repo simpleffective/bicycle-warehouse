@@ -42,7 +42,11 @@
   animation-name: spin;
   animation-duration: 3s;
   animation-timing-function: ease-out;
-  animation-fill-mode: both,;
+  animation-fill-mode: both,; 
+}
+#pagination .current-page-button {
+   border: 2px solid red;
+   border-radius: 50%;
 }
 @keyframes spin {
   0% {
