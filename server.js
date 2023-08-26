@@ -1,14 +1,17 @@
+require('dotenv').config()
+
 const {
   getTableData,
   postBicycle,
-  servePublicFiles
+  servePublicFiles,
+  onSignIn
 } = require('./handlers.js')
 
 const PORT = 3000
-const BASE = `http://localhost:${PORT}`
+const BASE = `http://localhost:${process.env.PORT}`
 
 const server = require('http').createServer((req,res) => {
-
+  console.log(req.url)
   // Build the URL object
   let parsedUrl = new URL(req.url, BASE);
 
@@ -24,6 +27,8 @@ const server = require('http').createServer((req,res) => {
   // Route
   if (req.url === 'get-table-data'){
     getTableData(req, res)
+  } else if (req.url === 'login') {
+    onSignIn(req, res)
   } else if (req.url === 'post-bicycle' && req.method === 'POST') {
     postBicycle(req, res)
   } else {

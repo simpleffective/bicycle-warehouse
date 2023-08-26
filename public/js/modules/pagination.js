@@ -39,7 +39,6 @@ function drawNumberButtons() {
 }
 
 function onPageRequest(evt) {
-  debugger
   let page = evt.target.value;
   if (page === '<')
     page = currentPage - 1;

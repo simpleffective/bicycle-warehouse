@@ -58,8 +58,13 @@ function servePublicFiles(req, res) {
   })
 }
 
+function onSignIn(req, res) {
+  console.log("OnSignIn")
+}
+
 module.exports = {
   getTableData,
   postBicycle,
   servePublicFiles,
+  onSignIn
 }
