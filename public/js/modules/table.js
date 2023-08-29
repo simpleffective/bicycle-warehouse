@@ -4,13 +4,15 @@ export {
   init
 }
 
-const tbody = document.querySelector('table').querySelector('tbody')
+const table = document.querySelector('table');
+const tbody = table.querySelector('tbody');
 const ROWS_PER_PAGE = 12;
 let tableData = null;
 
 function init() {
   const TABLE_DATA_URL = '/get-table-data'
-
+  initActions();
+  return
   fetch(TABLE_DATA_URL)
   .then( (response) => response.json())
   .then( (data) => {
@@ -86,4 +88,25 @@ function produceCellHTML(header, cellData) {
     //   break;
   }
   return html;
+}
+
+function initActions() {
+  const thead = table.querySelector('thead');
+  const toggle_buttons = thead.querySelectorAll('.toggle-table-action')
+  .forEach(button => {
+    const th = button.closest('th')   // get parent th
+    th.addEventListener('click', event => onHeaderClick(event, th))
+  })
+  };
+
+function onHeaderClick(event, th) {
+  // handle event if the button fired it
+  if (event.target === th.querySelector('span button')) {
+    if (th.dataset.name == 'person') {
+      // display user search bar
+      let search_bar = document.querySelector('.search-user');
+      search_bar.style.display = search_bar.style.display === 'none' ? 'block' : 'none';
+      search_bar.querySelector('input').focus();
+    }
+  }
 }

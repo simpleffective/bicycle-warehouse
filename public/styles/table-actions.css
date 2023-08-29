@@ -1,6 +1,6 @@
 .table-actions{
   display: flex;
-  align-items: center;
+  align-self: self-start;
   margin-bottom: 8px;
 }
 #add-bicycle-button{
@@ -18,4 +18,32 @@
 }
 .plus-icon{
   width: 100%;
+}
+th[data-name="person"] span{
+  position: relative;
+}
+.search-user {
+  display: flex;
+  justify-content: center;
+  display: none;
+}
+.search-user input{
+  width: 60%;
+  background-color: transparent;
+  border-bottom: 1px solid black;
+}
+.search-user input:focus{
+  outline: none;
+  border-bottom: 2px solid black;
+}
+.toggle-table-action {
+  background-color: transparent;
+  color: yellow;
+  position:absolute;
+  transform: rotate(270deg);
+  right: 110%;
+  top: 15%;
+}
+.toggle-table-action:hover {
+  text-shadow: 0 0 2px blue;
 }

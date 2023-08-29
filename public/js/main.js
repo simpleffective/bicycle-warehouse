@@ -1,6 +1,5 @@
 import {init as initTable} from './modules/table.js'
 import {form, initForm} from './modules/form.js'
-import {init as initAuth} from './modules/auth.js'
 
 const modal = document.getElementById('modal')
 // import qrScanner from './modules/qrScanner'
@@ -28,11 +27,10 @@ function initAddBicycleButton() {
 }
 
 function init() {
-  initAddBicycleButton()
+  // initAddBicycleButton()
 
   initTable()
   initForm()
-  initAuth()
 }
 
 
