@@ -101,12 +101,10 @@ function initActions() {
 
 function onHeaderClick(event, th) {
   // handle event if the button fired it
-  if (event.target === th.querySelector('span button')) {
+  if (event.target === th.querySelector('.toggle-table-action')) {
+    th.classList.toggle('expand');
     if (th.dataset.name == 'person') {
-      // display user search bar
-      let search_bar = document.querySelector('.search-user');
-      search_bar.style.display = search_bar.style.display === 'none' ? 'block' : 'none';
-      search_bar.querySelector('input').focus();
+      document.querySelector('.search-user input').focus();
     }
   }
 }

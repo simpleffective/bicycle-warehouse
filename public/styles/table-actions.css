@@ -19,9 +19,62 @@
 .plus-icon{
   width: 100%;
 }
+
 th[data-name="person"] span{
   position: relative;
 }
+th[data-name="person"].expand .toggle-table-action {
+  transform: rotate(90deg);
+}
+th[data-name="person"].expand .search-user {
+  display: block;
+}
+
+th[data-name="status"],th[data-name="status"] span {
+  position: relative;
+}
+th[data-name="status"].expand .toggle-table-action {
+  transform: rotate(180deg);
+}
+th[data-name="status"].expand .filter-status-popup {
+  display: flex;
+  animation: popup 0.05s;
+}
+
+.filter-status-popup {
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  background-color: var(--pnimeet-green);
+  color: var(--pnimeet-yellow-dull);
+  position: absolute;
+  padding: 10px 5px 10px 10px;
+  top:50%; left:-52%;
+  box-shadow:
+  -1px -1px 1px rgb(255,255,255,0.6),
+  1px 1px 1px rgb(0,0,0,0.8),
+  2px 2px 3px rgb(0,0,0,0.5),
+  4px 4px 5px rgb(0,0,0,0.3);
+  z-index: var(--z-index-table-action-popup);
+}
+@keyframes popup {
+  0% {
+    transform: scale(0.1);
+  }
+  50%{
+    transform: scale(0.5);
+  }
+  100%{
+    transform: scale(1);
+  }
+}
+.filter-status-popup > div {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  place-items: center;
+}
+
 .search-user {
   display: flex;
   justify-content: center;
@@ -31,6 +84,8 @@ th[data-name="person"] span{
   width: 60%;
   background-color: transparent;
   border-bottom: 1px solid black;
+  font-size: 0.8em;
+  color: rgb(47, 47, 47);
 }
 .search-user input:focus{
   outline: none;
@@ -40,10 +95,32 @@ th[data-name="person"] span{
   background-color: transparent;
   color: yellow;
   position:absolute;
-  transform: rotate(270deg);
   right: 110%;
   top: 15%;
+  transform: rotate(-90deg);
+  transition: transform 0.5s cubic-bezier(0.44, 2.02, 0.32, 0.75);
+  font-size: 0.9em;
 }
 .toggle-table-action:hover {
   text-shadow: 0 0 2px blue;
+}
+
+.status-indicator::after{
+  content:"";
+  width:80%;
+  height:50%;
+  position:absolute;
+  top:5%;
+  left:10%;
+  border-radius:100% / 100%;
+  background: linear-gradient(white, transparent);
+}
+th[data-name="status"] .filter-status-popup div input{
+  /* box-shadow: 0px 2px 1px black; */
+  position: relative;
+  width: 50%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background-color: orange;
+  background: linear-gradient(top, #222 0%, #45484d 100%);
 }

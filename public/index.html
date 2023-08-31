@@ -92,11 +92,30 @@
         <thead>
           <tr>
             <th scope="col" data-name="visual"></th>
-            <th scope="col" data-name="status">סטטוס</th>
+            <th scope="col" data-name="status">
+              <span>
+                סטטוס
+                <button class="toggle-table-action">&#x27A4;</button>
+              </span>
+              <div class="filter-status-popup">
+                <div>
+                  <input type="checkbox" id="status-available" checked>
+                  <label for="status-displayed">פנויות</label>
+                </div>
+                <div>
+                  <input type="checkbox" id="status-maintained" checked>
+                  <label for="status-maintained">בטיפול</label>
+                </div>
+                <div>
+                  <input type="checkbox" id="status-done" checked>
+                  <label for="status-done">סיימו</label>
+                </div>
+              </div>
+            </th>
             <th scope="col" data-name="person">
               <span>
                 אחראי
-                <button class="toggle-table-action">&gt;</button>
+                <button class="toggle-table-action">&#x27A4;</button>
               </span>
               <div class="search-user">
                 <input type="text">
