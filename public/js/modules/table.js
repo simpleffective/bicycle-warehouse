@@ -95,16 +95,22 @@ function initActions() {
   const toggle_buttons = thead.querySelectorAll('.toggle-table-action')
   .forEach(button => {
     const th = button.closest('th')   // get parent th
-    th.addEventListener('click', event => onHeaderClick(event, th))
+    th.addEventListener('click', event => expandHeader(event, th))
+    th.querySelector('.table-action').addEventListener('focusout', event => contractHeader(event, th));
   })
-  };
+};
 
-function onHeaderClick(event, th) {
+function expandHeader(event, th) {
   // handle event if the button fired it
   if (event.target === th.querySelector('.toggle-table-action')) {
     th.classList.toggle('expand');
-    if (th.dataset.name == 'person') {
-      document.querySelector('.search-user input').focus();
-    }
+    th.querySelector('.table-action').focus();
   }
+}
+
+function contractHeader(event, th) {
+  setTimeout( () => {
+    console.log("revmoin");
+    th.classList.remove('expand');
+  }, 100);
 }
