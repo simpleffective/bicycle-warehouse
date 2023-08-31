@@ -25,8 +25,8 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/github_username/repo_name">
-    <img src="public/resources/bicycle-icon.svg" alt="Logo" width="80" height="80">
+  <a href="https://github.com/simpleffective/bicycle-warehouse">
+    <img src="public/resources/bicycle-icon2.jpg" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">Bicycle Warehouse</h3>
