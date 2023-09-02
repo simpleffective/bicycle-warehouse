@@ -19,44 +19,24 @@
     <h1 class="website-title">
       מחסן אופניים
     </h1>
-    <!-- <div id="g_id_onload"
-      data-client_id="849774135290-6fmfb3ku97er6f7p9i48g0lenurte09j.apps.googleusercontent.com"
-      data-context="signin"
-      data-ux_mode="popup"
-      data-login_uri="http://localhost:3000/login"
-      data-auto_prompt="false">
-    </div>
-
-    <div class="g_id_signin"
-      data-type="standard"
-      data-shape="pill"
-      data-theme="outline"
-      data-text="signin_with"
-      data-size="large"
-      data-logo_alignment="left">
-    </div> -->
-    <button id="login-button">login</button>
 
   </header>
 
   <main>
     <section>
       <!-- Table Actions Tool Bar-->
-      <div class="table-actions" dir="rtl">
-        <button id="add-bicycle-button">
-          <img class="plus-icon" src="resources/pluspng.png" alt="">
-        </button>
-        <input class="search-bar" type="search" placeholder="חיפוש" id="" dir="rtl">
-        <div id="reader" style="width: 600px;"></div>
-      </div>
+      <button id="add-bicycle-button">
+        <img src="resources/plus-icon-13062.png">
+      </button>
       
       <!-- Modal -->
       <div id="modal" style="display: none;">
+        <button id="quit-form-button"></button>
         <h1>רישום אופניים</h1>
         <form dir="rtl" id="bicycle-form" action="/post-bicycle" method="POST">
           
           <div dir="rtl" id="media-buttons-container">
-            <div id="bardcode-container">
+            <div id="barcode-container">
               <button>
               </button>
               <span>&#x2713</span>
@@ -72,25 +52,28 @@
               </label>
             </div>
           </div>
-
-          <div dir="rtl" class="text-input-container">
-            <label for="textId">סימן זיהוי</label>
-            <input type="text" name="textId" id="textId" placeholder="מותג, תווית,..." required>
+          
+          <div id="text-input">
+            <div dir="rtl" class="text-input-container">
+              <label for="textId">סימן זיהוי</label>
+              <input type="text" name="textId" id="textId" placeholder="מותג, תווית,..." required>
+            </div>
+  
+            <div dir="rtl" class="text-input-container">
+              <label for="person">אחראי</label>
+              <input type="text" name="person" id="person" placeholder="ישראל ישראלי" required>
+            </div>
+                      
+            <div dir="rtl" class="text-input-container">
+              <label for="email">מייל</label>
+              <input type="email" name="email" id="email" placeholder="israel@pnimeet.com" required>
+            </div>
           </div>
 
-          <div dir="rtl" class="text-input-container">
-            <label for="person">אחראי</label>
-            <input type="text" name="person" id="person" placeholder="ישראל ישראלי" required>
-          </div>
-                    
-          <div dir="rtl" class="text-input-container">
-            <label for="email">מייל</label>
-            <input type="email" name="email" id="email" placeholder="israel@pnimeet.com" required>
-          </div>
 
           <div dir="rtl" id="form-buttons-container">
-            <input type="reset">
-            <input type="submit">
+            <input type="submit" value="שלח">
+            <input type="reset" value="נקה">
           </div>
 
         </form>
@@ -108,17 +91,43 @@
         </colgroup>
         <thead>
           <tr>
-            <th scope="col"></th>
-            <th scope="col">סטטוס</th>
-            <th scope="col">אחראי</th>
-            <th scope="col">מייל</th>
-            <th scope="col">נלקחו</th>
-            <th scope="col">טופלו לאחרונה</th>
+            <th scope="col" data-name="visual"></th>
+            <th scope="col" data-name="status">
+              <span>
+                סטטוס
+                <button class="toggle-table-action">&#x27A4;</button>
+              </span>
+              <div id="filter-status-popup" class="table-action-focus" tabindex="0">
+                <div>
+                  <input type="checkbox" id="status-available" tabindex="-1" value="פנויות" class="table-action-input" checked>
+                  <label for="status-displayed">פנויות</label>
+                </div> 
+                <div>
+                  <input type="checkbox" id="status-maintained" value="בטיפול" class="table-action-input" checked>
+                  <label for="status-maintained">בטיפול</label>
+                </div>
+                <div>
+                  <input type="checkbox" id="status-done" value="סיימו" class="table-action-input" checked>
+                  <label for="status-done">סיימו</label>
+                </div>
+              </div>
+            </th>
+            <th scope="col" data-name="person">
+              <span>
+                אחראי
+                <button  class="toggle-table-action">&#x27A4;</button>
+              </span>
+              <div id="search-user">
+                <input type="text" class="table-action-input table-action-focus">
+              </div>
+            </th>
+            <th scope="col" data-name="email">מייל</th>
+            <th scope="col" data-name="taken">נלקחו</th>
+            <th scope="col" data-name="maintained">טופלו לאחרונה</th>
           </tr>
         </thead>
-        <tbody> <!--
+        <tbody> 
           <tr>
-            th scope=row for id for admins/devs? 
             <td>
               <div class="visual-info-container">
                 <span class="bicycle-color"></span>
@@ -159,13 +168,13 @@
             <td>15/06/2023</td>
             <td scope="row">11/07/2023</td>
           </tr>
-          -->
+         
         </tbody>
       </table>
 
       <!-- Pagination -->
       <div dir="rtl" id="pagination">
-        <button id="prev" value="<">&lt;</button>
+        <button id="prev" value="<"></button>
         <div id="pagination-numbers-container">
           <!--
           <button>1</button>
@@ -177,7 +186,7 @@
           <button>7</button>
           -->
         </div>
-        <button id="next" value=">">&gt;</button>
+        <button id="next" value=">"></button>
       </div>
     
     </section>

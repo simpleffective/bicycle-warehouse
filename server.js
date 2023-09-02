@@ -14,7 +14,7 @@ const server = require('http').createServer((req,res) => {
   console.log(req.url)
   // Build the URL object
   let parsedUrl = new URL(req.url, BASE);
-
+  
   // Extract the path from the URL object
   let path = parsedUrl.pathname;
 

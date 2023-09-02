@@ -1,29 +1,45 @@
 import { init as initPagination } from './pagination.js'
+import { init as initActions} from './table-actions.js'
 export {
   renderTablePage,
+  tableAction,
   init
 }
 
-const tbody = document.querySelector('table').querySelector('tbody')
-const ROWS_PER_PAGE = 12;
-let tableData = null;
+const table = document.querySelector('table');
+const tbody = table.querySelector('tbody');
+const ROWS_PER_PAGE = 8;
+const tableData = [];
+let displayedTableData = [];
 
 function init() {
   const TABLE_DATA_URL = '/get-table-data'
-
+  
   fetch(TABLE_DATA_URL)
   .then( (response) => response.json())
   .then( (data) => {
-    tableData = data;
-    renderTablePage(1);
-    initPagination(tableData.length)
+    tableData.push(...data);
+    displayedTableData = [...tableData];
+    resetTable()
+    initActions()
   })
 }
 
-function tableAction(filter) {
-  // sort, filter, etc...
-  // let filteredData = ... ;
-  // initPagination(filteredData)
+function resetTable() {
+  initPagination(displayedTableData.length)
+  renderTablePage(1);
+}
+
+function tableAction(action, actionArgs) {
+  switch (action) {
+    case "filter":
+      displayedTableData = tableData.filter(row => actionArgs.values.includes(row[actionArgs.header]))
+      break;
+    default:
+      break;
+  }
+
+  resetTable()
 }
 
 function renderEmptyTable() {
@@ -33,7 +49,7 @@ function renderEmptyTable() {
 
 function renderTablePage(page) {
   
-  if (tableData.length == 0) {
+  if (displayedTableData.length == 0) {
     renderEmptyTable();
     return;
   }
@@ -42,7 +58,7 @@ function renderTablePage(page) {
 
   let start = (page - 1) * ROWS_PER_PAGE
   let end = start + ROWS_PER_PAGE
-  tableData.slice(start, end).forEach(row => {
+  displayedTableData.slice(start, end).forEach(row => {
     let rowElement = tbody.insertRow();
     let i = 0;
     Object.keys(row).forEach(header => {
@@ -87,3 +103,4 @@ function produceCellHTML(header, cellData) {
   }
   return html;
 }
+
