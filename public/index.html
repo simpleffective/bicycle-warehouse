@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="styles/form/form.css">
   <link rel="stylesheet" href="styles/pagination.css">
   <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
-  <script src="https://accounts.google.com/gsi/client" async></script>
+  <!-- <script src="https://accounts.google.com/gsi/client" async></script> -->
 </head>
 <body>
   
@@ -36,9 +36,10 @@
         <form dir="rtl" id="bicycle-form" action="/post-bicycle" method="POST">
           
           <div dir="rtl" id="media-buttons-container">
+            
             <div id="barcode-container">
-              <button>
-              </button>
+              <div id="QRreader">
+              </div>
               <span>&#x2713</span>
             </div>
 

@@ -1,13 +1,10 @@
+import { readQR } from "./qrScanner.js";
 export function init(){
   
   const formAvailble = initAddBicycleButton(false)
   if (formAvailble)
     initForm()
 } 
-
-// import qrScanner from './modules/qrScanner'
-// reader.style.display = readerDisplay;
-  // html5QrcodeScanner.render(onScanSuccess, null);
 
 window.mobileAndTabletCheck = function() {
   let check = false;
@@ -20,6 +17,8 @@ function initForm() {
   document.getElementById('bicycle-form').onsubmit = onFormSubmittion;
   // init close button
   document.getElementById('quit-form-button').onclick = closeForm;
+  // init barcode button
+  document.getElementById('QRreader').onclick = readQR();
 }
 
 function closeForm() {
