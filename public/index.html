@@ -97,17 +97,17 @@
                 סטטוס
                 <button class="toggle-table-action">&#x27A4;</button>
               </span>
-              <div id="filter-status-popup" class="table-action" tabindex="0">
+              <div id="filter-status-popup" class="table-action-focus" tabindex="0">
                 <div>
-                  <input type="checkbox" id="status-available" checked>
+                  <input type="checkbox" id="status-available" tabindex="-1" value="available" class="table-action-input" checked>
                   <label for="status-displayed">פנויות</label>
-                </div>
+                </div> 
                 <div>
-                  <input type="checkbox" id="status-maintained" checked>
+                  <input type="checkbox" id="status-maintained" value="בטיפול" class="table-action-input" checked>
                   <label for="status-maintained">בטיפול</label>
                 </div>
                 <div>
-                  <input type="checkbox" id="status-done" checked>
+                  <input type="checkbox" id="status-done" value="done" class="table-action-input" checked>
                   <label for="status-done">סיימו</label>
                 </div>
               </div>
@@ -118,7 +118,7 @@
                 <button  class="toggle-table-action">&#x27A4;</button>
               </span>
               <div id="search-user">
-                <input type="text" class="table-action">
+                <input type="text" class="table-action-input table-action-focus">
               </div>
             </th>
             <th scope="col" data-name="email">מייל</th>

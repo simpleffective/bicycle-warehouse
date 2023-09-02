@@ -10,10 +10,10 @@ window.mobileAndTabletCheck = function() {
   return check;
 };
 
-function initAddBicycleButton() {
+function initAddBicycleButton(hideForPC=true) {
   const addButton = document.getElementById('add-bicycle-button')
 
-  if (!mobileAndTabletCheck()) {
+  if (hideForPC && !mobileAndTabletCheck()) {
     addButton.style.display = 'none';
     return
   }
@@ -27,7 +27,7 @@ function initAddBicycleButton() {
 }
 
 function init() {
-  // initAddBicycleButton()
+  initAddBicycleButton(false)
 
   initTable()
   initForm()

@@ -86,7 +86,7 @@ th[data-name="status"].expand #filter-status-popup {
   font-size: 0.8em;
   color: rgb(47, 47, 47);
 }
-input[type="text"].table-action:focus{
+input[type="text"].table-action-focus:focus{
   outline: none;
   border-bottom: 2px solid black;
 }

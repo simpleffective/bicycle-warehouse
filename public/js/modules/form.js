@@ -1,6 +1,11 @@
 
-function initFormSubmission(form) {
-  form.addEventListener('submit', (event) => {
+function initFormSubmission() {
+  const form = document.getElementById('bicycle-form')
+  form.addEventListener('submit', onFormSubmittion);
+  form.addEventListener('focusout', )
+}
+
+function onFormSubmittion(event) {
   event.preventDefault();
 
   const formData = new FormData(form);
@@ -17,11 +22,8 @@ function initFormSubmission(form) {
     .then(data => {
         console.log(data.message);
     });
-  });
 }
 
-export const form = document.getElementById('bicycle-form')
-
 export function initForm(){
-  initFormSubmission(form)
+  initFormSubmission()
 } 

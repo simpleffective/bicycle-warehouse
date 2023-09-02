@@ -16,7 +16,7 @@
   border: 0;
   border-radius: 2px;
   box-shadow: 0px 0px 4px rgba(0,0,0,0.4);
-  background-image: url(../../resources/greenQR.jpg);
+  background: url(../../resources/greenQR.jpg) no-repeat;
   background-size: 100%;
   cursor: pointer;
 }
@@ -42,7 +42,7 @@
   /* padding: 0px 4px; */
   height: 30px;
   width: 80%;
-  background-image: url(../../resources/bicycleCamera1.jpg);
+  background: url(../../resources/bicycleCamera1.jpg) no-repeat;
   background-size: 100%;
   cursor: pointer;
 }

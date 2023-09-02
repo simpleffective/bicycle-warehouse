@@ -1,31 +1,45 @@
 import { init as initPagination } from './pagination.js'
+import { init as initActions} from './table-actions.js'
 export {
   renderTablePage,
+  tableAction,
   init
 }
 
 const table = document.querySelector('table');
 const tbody = table.querySelector('tbody');
 const ROWS_PER_PAGE = 12;
-let tableData = null;
+const tableData = [];
+let displayedTableData = [];
 
 function init() {
   const TABLE_DATA_URL = '/get-table-data'
-  initActions();
-  return
+  
   fetch(TABLE_DATA_URL)
   .then( (response) => response.json())
   .then( (data) => {
-    tableData = data;
-    renderTablePage(1);
-    initPagination(tableData.length)
+    tableData.push(...data);
+    displayedTableData = [...tableData];
+    resetTable()
+    initActions()
   })
 }
 
-function tableAction(filter) {
-  // sort, filter, etc...
-  // let filteredData = ... ;
-  // initPagination(filteredData)
+function resetTable() {
+  initPagination(displayedTableData.length)
+  renderTablePage(1);
+}
+
+function tableAction(action, actionArgs) {
+  switch (action) {
+    case "filter":
+      displayedTableData = tableData.filter(row => actionArgs.values.includes(row[actionArgs.header]))
+      break;
+    default:
+      break;
+  }
+
+  resetTable()
 }
 
 function renderEmptyTable() {
@@ -35,7 +49,7 @@ function renderEmptyTable() {
 
 function renderTablePage(page) {
   
-  if (tableData.length == 0) {
+  if (displayedTableData.length == 0) {
     renderEmptyTable();
     return;
   }
@@ -44,7 +58,7 @@ function renderTablePage(page) {
 
   let start = (page - 1) * ROWS_PER_PAGE
   let end = start + ROWS_PER_PAGE
-  tableData.slice(start, end).forEach(row => {
+  displayedTableData.slice(start, end).forEach(row => {
     let rowElement = tbody.insertRow();
     let i = 0;
     Object.keys(row).forEach(header => {
@@ -90,27 +104,3 @@ function produceCellHTML(header, cellData) {
   return html;
 }
 
-function initActions() {
-  const thead = table.querySelector('thead');
-  const toggle_buttons = thead.querySelectorAll('.toggle-table-action')
-  .forEach(button => {
-    const th = button.closest('th')   // get parent th
-    th.addEventListener('click', event => expandHeader(event, th))
-    th.querySelector('.table-action').addEventListener('focusout', event => contractHeader(event, th));
-  })
-};
-
-function expandHeader(event, th) {
-  // handle event if the button fired it
-  if (event.target === th.querySelector('.toggle-table-action')) {
-    th.classList.toggle('expand');
-    th.querySelector('.table-action').focus();
-  }
-}
-
-function contractHeader(event, th) {
-  setTimeout( () => {
-    console.log("revmoin");
-    th.classList.remove('expand');
-  }, 100);
-}
