@@ -1,22 +1,50 @@
 #modal {
   position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: var(--z-index-modal);
   padding: 20px;
+  width: 50%;
+  height: 60%;
   box-shadow: 0 0 20px rgb(0,0,0,0.40);
   min-width: 200px;
+  max-width: 400px;
   background-color: rgb(83, 160, 107);
   border: 2px solid black;
   border-radius: 2px;
 }
+#add-bicycle-button{
+  border: none;
+  border-radius: 50%;
+  background-color: transparent;
+  width: 5vw;
+  cursor: pointer;
+  margin-left: auto;  /* align to the right! */
+  margin-bottom: 6px;
+}
+
+
+#quit-form-button {
+  position: absolute;
+  top: 0 ; right: 0;
+  background: url('../../resources/x-button-icon.jpg') no-repeat;
+  background-size: cover;
+  padding: 2.5%;
+  margin: 2%;
+  cursor: pointer;
+}
 
 #modal h1{
+  flex:1 0 auto;
   color:lightyellow;
   text-align: center;
   border-bottom: 1px solid white;
   padding-bottom: 25px;
   margin: 0;
   margin-bottom: 18px;
+  font-size: 1.2em;
 }

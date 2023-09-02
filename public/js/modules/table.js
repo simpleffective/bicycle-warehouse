@@ -8,7 +8,7 @@ export {
 
 const table = document.querySelector('table');
 const tbody = table.querySelector('tbody');
-const ROWS_PER_PAGE = 12;
+const ROWS_PER_PAGE = 8;
 const tableData = [];
 let displayedTableData = [];
 

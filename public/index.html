@@ -25,21 +25,18 @@
   <main>
     <section>
       <!-- Table Actions Tool Bar-->
-      <div class="table-actions" dir="rtl">
-        <button id="add-bicycle-button">
-          <img class="plus-icon" src="resources/pluspng.png">
-        </button>
-        <!-- <input class="search-bar" type="search" placeholder="חיפוש" id="" dir="rtl"> -->
-        <!-- <div id="reader" style="width: 600px;"></div> -->
-      </div>
+      <button id="add-bicycle-button">
+        <img src="resources/plus-icon-13062.png">
+      </button>
       
       <!-- Modal -->
       <div id="modal" style="display: none;">
+        <button id="quit-form-button"></button>
         <h1>רישום אופניים</h1>
         <form dir="rtl" id="bicycle-form" action="/post-bicycle" method="POST">
           
           <div dir="rtl" id="media-buttons-container">
-            <div id="bardcode-container">
+            <div id="barcode-container">
               <button>
               </button>
               <span>&#x2713</span>
@@ -55,25 +52,28 @@
               </label>
             </div>
           </div>
-
-          <div dir="rtl" class="text-input-container">
-            <label for="textId">סימן זיהוי</label>
-            <input type="text" name="textId" id="textId" placeholder="מותג, תווית,..." required>
+          
+          <div id="text-input">
+            <div dir="rtl" class="text-input-container">
+              <label for="textId">סימן זיהוי</label>
+              <input type="text" name="textId" id="textId" placeholder="מותג, תווית,..." required>
+            </div>
+  
+            <div dir="rtl" class="text-input-container">
+              <label for="person">אחראי</label>
+              <input type="text" name="person" id="person" placeholder="ישראל ישראלי" required>
+            </div>
+                      
+            <div dir="rtl" class="text-input-container">
+              <label for="email">מייל</label>
+              <input type="email" name="email" id="email" placeholder="israel@pnimeet.com" required>
+            </div>
           </div>
 
-          <div dir="rtl" class="text-input-container">
-            <label for="person">אחראי</label>
-            <input type="text" name="person" id="person" placeholder="ישראל ישראלי" required>
-          </div>
-                    
-          <div dir="rtl" class="text-input-container">
-            <label for="email">מייל</label>
-            <input type="email" name="email" id="email" placeholder="israel@pnimeet.com" required>
-          </div>
 
           <div dir="rtl" id="form-buttons-container">
-            <input type="reset">
-            <input type="submit">
+            <input type="submit" value="שלח">
+            <input type="reset" value="נקה">
           </div>
 
         </form>
@@ -99,7 +99,7 @@
               </span>
               <div id="filter-status-popup" class="table-action-focus" tabindex="0">
                 <div>
-                  <input type="checkbox" id="status-available" tabindex="-1" value="available" class="table-action-input" checked>
+                  <input type="checkbox" id="status-available" tabindex="-1" value="פנויות" class="table-action-input" checked>
                   <label for="status-displayed">פנויות</label>
                 </div> 
                 <div>
@@ -107,7 +107,7 @@
                   <label for="status-maintained">בטיפול</label>
                 </div>
                 <div>
-                  <input type="checkbox" id="status-done" value="done" class="table-action-input" checked>
+                  <input type="checkbox" id="status-done" value="סיימו" class="table-action-input" checked>
                   <label for="status-done">סיימו</label>
                 </div>
               </div>
@@ -174,7 +174,7 @@
 
       <!-- Pagination -->
       <div dir="rtl" id="pagination">
-        <button id="prev" value="<">&lt;</button>
+        <button id="prev" value="<"></button>
         <div id="pagination-numbers-container">
           <!--
           <button>1</button>
@@ -186,7 +186,7 @@
           <button>7</button>
           -->
         </div>
-        <button id="next" value=">">&gt;</button>
+        <button id="next" value=">"></button>
       </div>
     
     </section>

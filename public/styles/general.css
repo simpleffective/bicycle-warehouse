@@ -35,6 +35,8 @@ body{
   min-height: 100vh;
   height: 1500px;
   line-height: 1;
+  display: flex;
+  justify-content: center;
 }
 
 .show-block {

@@ -7,6 +7,8 @@ function determineMIME(fileExtension) {
     contentType = 'text/css';
   } else if (fileExtension === '.js') {
     contentType = 'application/javascript';
+  } else if (fileExtension === '.svg') {
+    contentType = 'image/svg+xml'
   }
   return contentType
 }
@@ -14,3 +16,4 @@ function determineMIME(fileExtension) {
 module.exports = {
   determineMIME
 }
+

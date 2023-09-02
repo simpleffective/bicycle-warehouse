@@ -1,24 +1,3 @@
-.table-actions{
-  display: flex;
-  align-self: self-start;
-  margin-bottom: 8px;
-}
-#add-bicycle-button{
-  display: flex;
-  align-items: center;
-  border: none;
-  border-radius: 50%;
-  background-color: rgba(0,0,0,0);
-  width: 50px;
-  cursor: pointer;
-}
-.search-bar{
-  margin-top: 4px;
-  height: 30px;
-}
-.plus-icon{
-  width: 100%;
-}
 
 th[data-name="person"] span{
   position: relative;

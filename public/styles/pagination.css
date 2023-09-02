@@ -2,13 +2,12 @@
   display: grid;
   grid-template-columns: auto 1fr auto;
   margin-top: 3%;
-  width: 80%;
+  width: fit-content;
   height: fit-content;
   align-items: center;
 }
 #pagination > button {
   padding: 1vw 2vw;
-  border: 1px solid red;
   background-color: transparent;
   display: flex;
   justify-content: center;
@@ -17,11 +16,24 @@
 #pagination button {
   cursor: pointer;
 }
+#pagination #prev {
+ background: url('../resources/arrow-icon.svg') no-repeat;
+ background-size: cover;
+ padding: 18px 18px;
+ transform: rotateY(180deg);
+ margin-left: 10px;
+}
+#pagination #next {
+  background: url('../resources/arrow-icon.svg') no-repeat;
+  background-size: cover;
+  padding: 18px 18px;
+  margin-right: 10px;
+ }
 #pagination div{
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  column-gap: 1px;
+  display: flex;
+  gap: 20px;
   place-items: center;
+  width: fit-content;
 }
 #pagination div button {
   background: url(../resources/wheel.png) no-repeat;
