@@ -34,6 +34,7 @@
   <p align="center">
     A mockup of a bicycle maintenance tracker list. <br>
     This project my first step in Web Development. project, practiced with the intention of learning Vanilla HTML, CSS, JavaScript, and Node.js. <br>
+I want to become an expert Web Developer in the future. <br> <br>
     This project was started with a real-life bicycle workshop in mind (located in TLV) and hopefully will launch in the near future, once I get good enough at Web Development 😁
   </p>
 </div>
