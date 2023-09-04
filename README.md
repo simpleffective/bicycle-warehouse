@@ -78,6 +78,32 @@
 * ![HTML5][HTML5-shield]
 * ![JavaScript][JS-shield]
 * ![NodeJS][Nodejs-shield]
+
+### What I Learned
+
+1. JavaScript basics:
+* Variables, Scopes, Hoisting, TDZ
+* Closures
+* IIFE
+* Promises, fetch API, async await
+* DOM structure
+* Responsive Event-Based design
+* The Event Loop
+
+2. HTML5 and CSS basics
+* Page structure
+* HTML Forms
+* Accessibility
+* CSS Box Model 
+* CSS Grid, CSS Flexbox
+* CSS Animations
+* CSS variables, units, functions
+
+3. Node.js
+* Modules
+* Handling HTTP requests
+* Basic server side routing and structure
+
   
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
