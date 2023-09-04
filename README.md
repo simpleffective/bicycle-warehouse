@@ -81,6 +81,8 @@
 
 ### What I Learned
 
+I learned from scratch the following concepts:
+
 1. JavaScript basics:
 * Variables, Scopes, Hoisting, TDZ
 * Closures
@@ -103,6 +105,9 @@
 * Modules
 * Handling HTTP requests
 * Basic server side routing and structure
+
+
+I'm continuing my studying in order to become an expert Web Developer by studying to strengthen my basics further, and have started learning modern technologies such as React, Next.js, Express.js, and more.
 
   
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
