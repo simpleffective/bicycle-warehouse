@@ -1,6 +1,10 @@
-import { readQR } from "./qrScanner.js";
-export function init(){
-  
+import { readQR, stopQR } from "./qrScanner.js";
+export {init, set_bicycle_id}
+let bicycle_id = null;
+let bicycle_photo = null;
+let bicycle_color = null;
+
+function init(){  
   const formAvailble = initAddBicycleButton(false)
   if (formAvailble)
     initForm()
@@ -13,26 +17,56 @@ window.mobileAndTabletCheck = function() {
 };
 
 function initForm() {
+  // readQR_ready();
   // init form submittion
   document.getElementById('bicycle-form').onsubmit = onFormSubmittion;
   // init close button
-  document.getElementById('quit-form-button').onclick = closeForm;
+  document.getElementById('quit-form').onclick = closeForm;
   // init barcode button
-  document.getElementById('QRreader').onclick = readQR();
+  document.getElementById('barcode-button').onclick = openScanner;
+  // listen on quit scanner button
+  // document.getElementById('quit-scanner').onclick = closeScanner;
+}
+
+function set_bicycle_id(id) {
+  bicycle_id = id;
+}
+
+function openScanner() {
+  readQR()
+  reader.style.position = 'absolute'
+  reader.style.display = 'block'
+  let quit_btn = document.createElement('button')
+  quit_btn.textContent = 'Quit'
+  quit_btn.classList.add('quit-modal-button')
+  quit_btn.onclick = closeScanner
+  reader.appendChild(quit_btn)
+}
+
+function closeScanner() {
+  stopQR()
+  let reader = document.getElementById('reader');
+  reader.style.display = 'none'
 }
 
 function closeForm() {
-  document.getElementById('modal').style.display = 'none';
+  document.getElementById('form-container').style.display = 'none';
   document.getElementById('blur').style.display = 'none';
+  document.querySelector('meta[name="viewport"]').content = "";
 }
 
 function openForm() {
-  document.getElementById('modal').style.display = 'block'
+  document.getElementById('form-container').style.display = 'block'
   document.getElementById('blur').style.display = 'block'
+  document.querySelector('meta[name="viewport"]').content = "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no";
 }
 
 function onFormSubmittion(event) {
   event.preventDefault();
+
+  // check QR exists
+  // check Photo exists
+  // check color exists
 
   const formData = new FormData(form);
   let URL = event.target.action

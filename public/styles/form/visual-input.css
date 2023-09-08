@@ -1,0 +1,81 @@
+#barcode-button{
+  width: 6.5em;
+  aspect-ratio: 1/1;
+  border-radius: 2px;
+  box-shadow: 0px 0px 4px rgba(0,0,0,0.4);
+  background: url(../../resources/greenQR.jpg) no-repeat;
+  background-size: 100%;
+  cursor: pointer;
+}
+
+#media-buttons-container{
+  display: flex;
+  align-items: end;
+  gap: 6em;
+  padding-right: 14%;
+  font-size: small;
+}
+
+#capture-container, #barcode-container {
+  display: flex;
+  align-items: flex-end;
+}
+
+#capture-container label {
+  background: url(../../resources/bicycleCamera1.jpg) no-repeat;
+  background-size: cover;
+  aspect-ratio: 1000/700;
+  width: 7em;
+  background-position: center;
+  cursor: pointer;
+}
+
+.uploaded-false #barcode-button, .uploaded-false label {
+  filter:brightness(0.6)
+}
+
+#uploaded {
+  border: 1px solid black;
+  border-radius: 3px;
+  background-color: white;
+  opacity: 0.8;
+  position: absolute;
+  bottom: 0em; left: -2em;
+  height: 18%;
+  aspect-ratio: 1/1;
+}
+
+#capture-container label, #barcode-button  {
+  box-shadow:  0px 0px 0px 0px rgba(0,0,0,0.5), 1px 1px 1px 1px rgba(0,0,0,0.3), 
+  2px 2px 2px 2px rgba(0,0,0,0.2), inset 1px 1px 1px rgba(103, 180, 97, 0.8);
+}
+
+#tick {
+  display: none;
+  color:greenyellow;
+  font-size: 2em;
+  position: absolute;
+  bottom: 0;
+  text-shadow: 1px 1px 1px black;
+  transition: transform 0.3s;
+  transform: scale(0);
+}
+
+.uploaded-true #tick{
+  display: inline;
+  transform: scale(1);
+}
+
+#barcode-container {
+  position: relative;
+  height: 100%;
+}
+#capture-container {
+  position: relative;
+  display: flex;
+  white-space: nowrap;
+  height: 100%;
+}
+#capture-container input[type="file"] {
+  display: none;
+}

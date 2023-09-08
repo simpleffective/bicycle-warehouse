@@ -11,49 +11,7 @@
 }
 #bicycle-form input[type="text"] { outline: 0;}
 #bicycle-form input[type="email"] { outline: 0;}
-#media-buttons-container{
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  gap: 1em;
-  font-size: small;
-}
-#QRreader{
-  width: 6.5em;
-  aspect-ratio: 1/1;
-  border-radius: 2px;
-  box-shadow: 0px 0px 4px rgba(0,0,0,0.4);
-  background: url(../../resources/greenQR.jpg) no-repeat;
-  background-size: 100%;
-  cursor: pointer;
-}
-#capture-container label {
-  border: 1px solid black;
-  background: url(../../resources/bicycleCamera1.jpg) no-repeat;
-  background-size: cover;
-  aspect-ratio: 1000/700;
-  width: 7em;
-  background-position: center;
-  cursor: pointer;
-}
-#barcode-container span {
-  color:greenyellow;
-  position: absolute;
-  font-size: 1.5em;
-  bottom: 0.2em; left: -1em;
-}
-#barcode-container {
-  position: relative;
-}
-#capture-container {
-  display: flex;
-  flex-direction: column;
-  white-space: nowrap;
-  align-items: center;
-}
-#capture-container input[type="file"] {
-  display: none;
-}
+
 
 .text-input-container {
   display: grid;

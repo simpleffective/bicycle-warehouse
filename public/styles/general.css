@@ -21,11 +21,11 @@ img, picture, svg, video {
 }
 
 * /* z-index */ {
-  --z-index-header: 10;
-  --z-index-table-action-popup: 14;
-  --z-index-image-popup: 15;
-  --z-index-blur: 16;
-  --z-index-modal: 20;
+  --z-index-header: 2;
+  --z-index-table-action-popup: 1;
+  --z-index-blur: 3;
+  --z-index-modal: 4;
+  --z-index-qr-modal: 1;
 }
 
 body{

@@ -9,8 +9,10 @@
   <link rel="stylesheet" href="styles/table-actions.css">
   <link rel="stylesheet" href="styles/form/modal.css">
   <link rel="stylesheet" href="styles/form/form.css">
+  <link rel="stylesheet" href="styles/form/visual-input.css">
   <link rel="stylesheet" href="styles/pagination.css">
   <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+  <meta name="viewport">
   <!-- <script src="https://accounts.google.com/gsi/client" async></script> -->
 </head>
 <body>
@@ -24,26 +26,37 @@
 
   <main>
     <section>
-      <!-- Table Actions Tool Bar-->
+
+      <!-- Plus Button -->
       <button id="add-bicycle-button">
         <img src="resources/plus-icon-13062.png">
       </button>
-      
-      <!-- Modal -->
-      <div id="modal" style="display: none;">
-        <button id="quit-form-button"></button>
+
+      <!-- Blur Filter -->
+      <div id="blur" class="blur-bg"></div>
+
+      <!-- Form Modal -->
+      <div id="form-container" class="modal" style="display: none;">
+
+        <!-- QR Scanner Modal -->
+        <div id="reader" style="display: none">
+          <button class="quit-modal-button"></button>
+        </div>
+        <button id="quit-form" class="quit-modal-button"></button>
         <h1>רישום אופניים</h1>
         <form dir="rtl" id="bicycle-form" action="/post-bicycle" method="POST">
           
           <div dir="rtl" id="media-buttons-container">
             
-            <div id="barcode-container">
-              <div id="QRreader">
+            <div id="barcode-container" class="uploaded-false">
+              <div id="barcode-button">
               </div>
-              <span>&#x2713</span>
+              <span id="uploaded">
+                <span id="tick">&#x2713</span>
+              </span>
             </div>
 
-            <div dir="rtl" id="capture-container">
+            <div dir="rtl" id="capture-container" class="uploaded-false">
               <input type="file"
               name="capture" id="capture"
               accept="image/*"
@@ -51,6 +64,9 @@
               <!-- <label for="capture">תמונה של האופניים</label> -->
               <label for="capture">
               </label>
+              <span id="uploaded">
+                <span id="tick">&#x2713</span>
+              </span>
             </div>
           </div>
           
@@ -78,6 +94,7 @@
           </div>
 
         </form>
+
       </div>
       
       <!-- The Table -->
@@ -192,8 +209,6 @@
     
     </section>
   </main>
-
-  <div id="blur" class="blur-bg"></div>
 
   <footer>
   </footer>

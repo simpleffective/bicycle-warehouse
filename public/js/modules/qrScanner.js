@@ -1,10 +1,17 @@
+import { set_bicycle_id } from "./form.js";
 
+let html5QrcodeScanner = null;
 
-
+export function init(){
+  html5QrcodeScanner = new Html5QrcodeScanner(
+  "reader",
+  { fps: 10},
+  /* verbose= */ false);
+}
 function onScanSuccess(decodedText, decodedResult) {
   // handle the scanned code as you like, for example:
-  console.log(`Code matched = ${decodedText}`, decodedResult);
-  console.log("yes")
+  alert(`Code matched = ${decodedText}`, decodedResult);
+  set_bicycle_id(decodedText)
 }
 
 function onScanFailure(error) {
@@ -13,40 +20,10 @@ function onScanFailure(error) {
   console.warn(`Code scan error = ${error}`);
 }
 
-// This method will trigger user permissions
-Html5Qrcode.getCameras().then(devices => {
-  /**
-   * devices would be an array of objects of type:
-   * { id: "id", label: "label" }
-   */
-  if (devices && devices.length) {
-    let cameraId = devices[0].id;
-    return cameraId;
-  }
-}).then(cameraId => {
-  const html5QrCode = new Html5Qrcode("QRreader");
-  html5QrCode.start(
-    cameraId, 
-    {
-      fps: 10,    // Optional, frame per seconds for qr code scanning
-      qrbox: { width: 250, height: 250 }  // Optional, if you want bounded box UI
-    },
-    (decodedText, decodedResult) => {
-      console.log(`Code matched = ${decodedText}`, decodedResult);
-    },
-    (errorMessage) => {
-      // parse error, ignore it.
-    })
-  .catch((err) => {
-    // Start failed, handle it.
-  });
-}).catch(err => {
-  // handle err
-});
-
-
-
-
 export function readQR() {
-  
+  html5QrcodeScanner.render(onScanSuccess, onScanFailure);
+}
+
+export function stopQR() {
+  html5QrcodeScanner.clear()
 }
