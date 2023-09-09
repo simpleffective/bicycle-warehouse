@@ -1,4 +1,4 @@
-import { set_bicycle_id } from "./form.js";
+import { notifyReaderSuccess } from "./form.js";
 
 let html5QrcodeScanner = null;
 
@@ -11,7 +11,7 @@ export function init(){
 function onScanSuccess(decodedText, decodedResult) {
   // handle the scanned code as you like, for example:
   alert(`Code matched = ${decodedText}`, decodedResult);
-  set_bicycle_id(decodedText)
+  notifyReaderSuccess(decodedText)
 }
 
 function onScanFailure(error) {

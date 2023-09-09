@@ -11,7 +11,7 @@ async function getTableData(req, res) {
 }
 
 function postBicycle(req, res) {
-
+  
   let data = ''
 
   req.on('data', chunk => {

@@ -29,7 +29,7 @@ const server = require('http').createServer((req,res) => {
     getTableData(req, res)
   } else if (req.url === 'login') {
     onSignIn(req, res)
-  } else if (req.url === 'post-bicycle' && req.method === 'POST') {
+  } else if (req.url === 'post-bicycle' && req.method.toLowerCase() === 'post') {
     postBicycle(req, res)
   } else {
     servePublicFiles(req, res)

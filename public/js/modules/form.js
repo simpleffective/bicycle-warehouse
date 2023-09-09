@@ -1,13 +1,21 @@
-import { readQR, stopQR } from "./qrScanner.js";
-export {init, set_bicycle_id}
-let bicycle_id = null;
-let bicycle_photo = null;
-let bicycle_color = null;
+import { init as initReader , readQR, stopQR } from "./qrScanner.js";
+export {init, notifyReaderSuccess}
+
+let bicycle_id = {
+  'name': 'QR code',
+  'value': null
+};
+let bicycle_photo = {
+  'name': 'photo',
+  'value': null
+};
 
 function init(){  
   const formAvailble = initAddBicycleButton(false)
-  if (formAvailble)
+  if (formAvailble) {
     initForm()
+    initReader()
+  }
 } 
 
 window.mobileAndTabletCheck = function() {
@@ -24,12 +32,23 @@ function initForm() {
   document.getElementById('quit-form').onclick = closeForm;
   // init barcode button
   document.getElementById('barcode-button').onclick = openScanner;
-  // listen on quit scanner button
-  // document.getElementById('quit-scanner').onclick = closeScanner;
+  // listen on photo input
+  document.querySelector('input[name="capture"]').oninput = onPhotoUpload;
 }
 
-function set_bicycle_id(id) {
-  bicycle_id = id;
+function notifyReaderSuccess(decodedText) {
+  bicycle_id.value = decodedText;
+  let qr_container = document.getElementById('barcode-container');
+  qr_container.classList.remove('uploaded-false');
+  qr_container.classList.add('uploaded-true');
+  closeScanner()
+}
+
+function onPhotoUpload() {
+  bicycle_photo.value = this.value;
+  let capture_container = document.getElementById('capture-container');
+  capture_container.classList.remove('uploaded-false');
+  capture_container.classList.add('uploaded-true');
 }
 
 function openScanner() {
@@ -63,10 +82,22 @@ function openForm() {
 
 function onFormSubmittion(event) {
   event.preventDefault();
+  debugger
+  // check visual inputs exist
+  const visual_inputs = [bicycle_id, bicycle_photo]
+  const missing = visual_inputs.find(x => x.value === null)
+  if (missing !== undefined) {
+    alert(`Form is missing a valid ${missing.name}`)
+    return
+  }
 
-  // check QR exists
-  // check Photo exists
-  // check color exists
+  const form = {
+    'id': bicycle_id.value,
+    'photo': bicycle_photo.value,
+    'textId': document.getElementById('textId').value,
+    'person': document.getElementById('person').value,
+    'email': document.getElementById('email').value,
+  }
 
   const formData = new FormData(form);
   let URL = event.target.action
