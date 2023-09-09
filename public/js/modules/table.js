@@ -9,7 +9,7 @@ export {
 const table = document.querySelector('table');
 const tbody = table.querySelector('tbody');
 const ROWS_PER_PAGE = 8;
-const tableData = [];
+let tableData;
 let displayedTableData = [];
 
 function init() {
@@ -18,7 +18,7 @@ function init() {
   fetch(TABLE_DATA_URL)
   .then( (response) => response.json())
   .then( (data) => {
-    tableData.push(...data);
+    tableData = data;
     displayedTableData = [...tableData];
     resetTable()
     initActions()
@@ -76,7 +76,7 @@ function produceCellHTML(header, cellData) {
       html = 
       `<div class="visual-info-container">
         <span class="bicycle-color"></span>
-        <img class="bicycle-image" src="./resources/${cellData.imgName}" alt="">
+        <img class="bicycle-image" src="${cellData.img_filename}" alt="">
         <span class="bicycle-text">${cellData.idText}</span>
       </div>
       <div class="image-popup">

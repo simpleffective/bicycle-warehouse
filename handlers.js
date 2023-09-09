@@ -3,6 +3,7 @@ const { determineMIME } = require('./util.js')
 const path = require('path')
 const fs = require('fs')
 const TableModel = require('./models/TableModel')
+const formidable = require('formidable')
 
 async function getTableData(req, res) {
   const tableData = await TableModel.getTableData()
@@ -10,20 +11,54 @@ async function getTableData(req, res) {
   res.end(tableData)
 }
 
-function postBicycle(req, res) {
-  
-  let data = ''
+async function postBicycle(req, res) {
 
-  req.on('data', chunk => {
-    data += chunk
-  });
+  const form = formidable.formidable({});
+  let fields;
+  let files;
+  try {
+      [fields, files] = await form.parse(req);
+      
+      const photo = files.capture[0];
+      const currPath = photo.filepath;
+      const uploadPath = '/public/uploads/' + photo.originalFilename;
 
-  req.on('end', () => {
-    const parsedData = JSON.parse(data);
-    console.log('Received POST data:', parsedData);
-    res.writeHead(200, { 'Content-Type': 'application/json' });
-    res.end(JSON.stringify({ message: 'Data received successfully' }));
-  });
+      fs.renameSync(currPath, path.join(__dirname, uploadPath));
+
+      console.log('File saved at:', uploadPath);
+      
+      const entry = {
+        'id': fields.id[0],
+        'img_filename': uploadPath,
+        'textId': fields.textId[0],
+        'person': fields.person[0],
+        'email': fields.email[0]
+      }
+
+      try {
+
+        const result = await TableModel.createEntry(entry);
+        
+        res.writeHead(200, { 
+          'Content-Type': 'application/json',
+          'Content-Length': Buffer.byteLength(result),
+        })
+        res.end(JSON.stringify(result))
+      
+      } catch (err) {
+        
+        console.error('Error:', err)
+        res.writeHead(err.httpCode || 400, { 'Content-Type': 'text/plain' });
+        res.end(String(err));
+
+      }
+      
+  } catch (err) {
+      console.error(err);
+      res.writeHead(err.httpCode || 400, { 'Content-Type': 'text/plain' });
+      res.end(String(err));
+      return;
+  }
 
 }
 

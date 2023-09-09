@@ -37,15 +37,16 @@
 
       <!-- Form Modal -->
       <div id="form-container" class="modal" style="display: none;">
-
+        <!-- Quit Button -->
+        <button id="quit-form" class="quit-modal-button"></button>
         <!-- QR Scanner Modal -->
         <div id="reader" style="display: none">
           <button class="quit-modal-button"></button>
         </div>
-        <button id="quit-form" class="quit-modal-button"></button>
         <h1>רישום אופניים</h1>
+
         <form dir="rtl" id="bicycle-form" action="/post-bicycle" method="POST" enctype="multipart/form-data">
-          
+        
           <div dir="rtl" id="media-buttons-container">
             
             <div id="barcode-container" class="uploaded-false">
@@ -55,7 +56,6 @@
                 <span id="tick">&#x2713</span>
               </span>
             </div>
-
             <div dir="rtl" id="capture-container" class="uploaded-false">
               <input type="file"
               name="capture" id="capture"
@@ -68,6 +68,7 @@
                 <span id="tick">&#x2713</span>
               </span>
             </div>
+            
           </div>
           
           <div id="text-input">
@@ -87,12 +88,10 @@
             </div>
           </div>
 
-
           <div dir="rtl" id="form-buttons-container">
             <input type="submit" value="שלח">
             <input type="reset" value="נקה">
           </div>
-
         </form>
 
       </div>

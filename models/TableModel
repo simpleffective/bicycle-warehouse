@@ -1,9 +1,65 @@
 
-const fsPromises = require('fs/promises')
+const fs = require('fs')
 const path = require('path')
+const { getDefaultHighWaterMark } = require('stream')
+
+const data_path = '/demo-data/'
 
 function getTableData() {
-  return fsPromises.readFile(path.join(__dirname, '/demo-data/demo-short-reformatted.json'), {encoding: 'utf8'})
+  return fs.promises.readFile(path.join(__dirname, data_path ,'demo-live.json'), {encoding: 'utf8'}, (err, data) => {
+    return '[' + data + ']'
+  })
+}
+
+async function createEntry(entry) {
+  const formattedEntry = JSON.stringify(parseEntry(entry))
+  await saveDataToFile(path.join(__dirname, data_path, 'demo-live.json'), formattedEntry)
+  return formattedEntry
+}
+
+async function saveDataToFile(filename, data) {
+  try {
+    const fileExists = await fs.promises.access(filename, fs.constants.F_OK)
+      .then(() => true)
+      .catch(() => false);
+
+    if (!fileExists) {
+      await fs.promises.writeFile(filename, '', 'utf8');
+    }
+    await fs.promises.appendFile(filename, data, 'utf8');
+    await fs.promises.appendFile(filename, ',\n', 'utf8');
+    console.log(
+    `Data: ${data}
+     Saved to ${filename}`
+     );
+  } catch (error) {
+    console.error('Error:', error);
+  }
+}
+
+function parseEntry(entry) {
+  return {
+    "visual": {
+    "img_filename": entry.img_filename,
+    "textId": entry.textId,
+    },
+    "status": entry.person? 'בטיפול' : 'פנויות',
+    "person": entry.person,
+    "email": `${entry.email.split('@')[0]}&#8203@${entry.email.split('@')[1]}`,
+    "takenDate": getToday(),
+    "maintainedDate":"&mdash"
+  }
+}
+
+function getToday() {
+  const today = new Date();
+  const year = today.getFullYear();
+  const month = today.getMonth() + 1; // Months are 0-based, so add 1
+  const day = today.getDate();
+
+  // Create a formatted string in dd-mm-yyyy format
+  return `${day.toString().padStart(2, '0')}-${month.toString().padStart(2, '0')}-${year}`;
 }
 
 module.exports.getTableData = getTableData
+module.exports.createEntry = createEntry

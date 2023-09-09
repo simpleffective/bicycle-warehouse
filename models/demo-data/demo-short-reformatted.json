@@ -1,7 +1,7 @@
 [
 {
   "visual": {
-  "imgName": "red-schwinn","idText":"schwinn"
+  "img_filename": "red-schwinn","idText":"schwinn"
 },
   "status": "בטיפול",
   "person":"אורן פנקס",
@@ -11,7 +11,7 @@
 },
 {
   "visual": {
-  "imgName": "red-schwinn","idText":"schwinn"
+  "img_filename": "red-schwinn","idText":"schwinn"
 },
   "status": "בטיפול",
   "person":"אורן פנקס",
@@ -21,7 +21,7 @@
 },
 {
   "visual": {
-  "imgName": "red-schwinn","idText":"schwinn"
+  "img_filename": "red-schwinn","idText":"schwinn"
 },
   "status": "בטיפול",
   "person":"אורן פנקס",
@@ -31,7 +31,7 @@
 },
 {
   "visual": {
-  "imgName": "red-schwinn","idText":"schwinn"
+  "img_filename": "red-schwinn","idText":"schwinn"
 },
   "status": "בטיפול",
   "person":"אורן פנקס",
@@ -40,7 +40,7 @@
   "maintainedDate":"2023-8-24"
 },{
   "visual": {
-  "imgName": "red-schwinn","idText":"schwinn"
+  "img_filename": "red-schwinn","idText":"schwinn"
 },
   "status": "בטיפול",
   "person":"אורן פנקס",
@@ -50,7 +50,7 @@
 },
 {
   "visual": {
-  "imgName": "red-schwinn","idText":"schwinn"
+  "img_filename": "red-schwinn","idText":"schwinn"
 },
   "status": "בטיפול",
   "person":"אורן פנקס",
@@ -60,7 +60,7 @@
 },
 {
   "visual": {
-  "imgName": "red-schwinn","idText":"schwinn"
+  "img_filename": "red-schwinn","idText":"schwinn"
 },
   "status": "בטיפול",
   "person":"אורן פנקס",
@@ -70,7 +70,7 @@
 },
 {
   "visual": {
-  "imgName": "red-schwinn","idText":"schwinn"
+  "img_filename": "red-schwinn","idText":"schwinn"
 },
   "status": "בטיפול",
   "person":"אורן פנקס",
@@ -79,7 +79,7 @@
   "maintainedDate":"2023-8-28"
 },{
   "visual": {
-  "imgName": "red-schwinn","idText":"schwinn"
+  "img_filename": "red-schwinn","idText":"schwinn"
 },
   "status": "בטיפול",
   "person":"אורן פנקס",
@@ -89,7 +89,7 @@
 },
 {
   "visual": {
-  "imgName": "red-schwinn","idText":"schwinn"
+  "img_filename": "red-schwinn","idText":"schwinn"
 },
   "status": "בטיפול",
   "person":"אורן פנקס",
@@ -99,7 +99,7 @@
 },
 {
   "visual": {
-  "imgName": "red-schwinn","idText":"schwinn"
+  "img_filename": "red-schwinn","idText":"schwinn"
 },
   "status": "בטיפול",
   "person":"אורן פנקס",
@@ -109,7 +109,7 @@
 },
 {
   "visual": {
-  "imgName": "red-schwinn","idText":"schwinn"
+  "img_filename": "red-schwinn","idText":"schwinn"
 },
   "status": "בטיפול",
   "person":"אורן פנקס",
@@ -118,7 +118,7 @@
   "maintainedDate":"2023-9-1"
 },{
   "visual": {
-  "imgName": "red-schwinn","idText":"schwinn"
+  "img_filename": "red-schwinn","idText":"schwinn"
 },
   "status": "בטיפול",
   "person":"אורן פנקס",
@@ -128,7 +128,7 @@
 },
 {
   "visual": {
-  "imgName": "red-schwinn","idText":"schwinn"
+  "img_filename": "red-schwinn","idText":"schwinn"
 },
   "status": "בטיפול",
   "person":"אורן פנקס",
@@ -138,7 +138,7 @@
 },
 {
   "visual": {
-  "imgName": "red-schwinn","idText":"schwinn"
+  "img_filename": "red-schwinn","idText":"schwinn"
 },
   "status": "בטיפול",
   "person":"אורן פנקס",
@@ -148,7 +148,7 @@
 },
 {
   "visual": {
-  "imgName": "red-schwinn","idText":"schwinn"
+  "img_filename": "red-schwinn","idText":"schwinn"
 },
   "status": "בטיפול",
   "person":"אורן פנקס",

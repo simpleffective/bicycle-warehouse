@@ -1,13 +1,14 @@
 import { init as initReader , readQR, stopQR } from "./qrScanner.js";
+import {notifyEntry} from "../main.js"
 export {init, notifyReaderSuccess}
 
 let bicycle_id = {
   'name': 'QR code',
-  'value': null
+  'value': ''
 };
 let bicycle_photo = {
   'name': 'photo',
-  'value': null
+  'value': () => document.querySelector('input[name="capture"]').value
 };
 
 function init(){  
@@ -45,7 +46,6 @@ function notifyReaderSuccess(decodedText) {
 }
 
 function onPhotoUpload() {
-  bicycle_photo.value = this.value;
   let capture_container = document.getElementById('capture-container');
   capture_container.classList.remove('uploaded-false');
   capture_container.classList.add('uploaded-true');
@@ -80,39 +80,38 @@ function openForm() {
   document.querySelector('meta[name="viewport"]').content = "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no";
 }
 
-function onFormSubmittion(event) {
+async function onFormSubmittion(event) {
   event.preventDefault();
-  debugger
+  
   // check visual inputs exist
-  const visual_inputs = [bicycle_id, bicycle_photo]
-  const missing = visual_inputs.find(x => x.value === null)
-  if (missing !== undefined) {
-    alert(`Form is missing a valid ${missing.name}`)
-    return
-  }
+  // const visual_inputs = [bicycle_id, bicycle_photo]
+  // const missing = visual_inputs.find(x => x.value === '')
+  // if (missing !== undefined) {
+  //   alert(`Form is missing a valid ${missing.name}`)
+  //   return
+  // }
 
-  const form = {
-    'id': bicycle_id.value,
-    'photo': bicycle_photo.value,
-    'textId': document.getElementById('textId').value,
-    'person': document.getElementById('person').value,
-    'email': document.getElementById('email').value,
-  }
+  const formData = new FormData(document.getElementById('bicycle-form'));
+  formData.append('id',bicycle_id.value)
 
-  const formData = new FormData(form);
   let URL = event.target.action
   let method = event.target.method
   
-  fetch(URL, {
+  const response = await fetch(URL, {
     method: method,
-    body: JSON.stringify(Object.fromEntries(formData)),
-    headers: {
-        'Content-Type': 'application/json'
-    }
-  }).then(response => response.json())
-    .then(data => {
-        console.log(data.message);
-    });
+    body: formData,
+  })
+
+  if (response.ok) {
+
+    console.log('Form submission response:')
+    response.json().then(data => console.table(data))
+    console.log('Restarting table...');
+    notifyEntry()
+
+  } else {
+    console.error('Form submission failed:', response.statusText)
+  }
 }
 
 function initAddBicycleButton(hideForPC=true) {
