@@ -5,12 +5,11 @@ let html5QrcodeScanner = null;
 export function init(){
   html5QrcodeScanner = new Html5QrcodeScanner(
   "reader",
-  { fps: 10},
+  { fps: 5},
   /* verbose= */ false);
 }
 function onScanSuccess(decodedText, decodedResult) {
   // handle the scanned code as you like, for example:
-  alert(`Code matched = ${decodedText}`, decodedResult);
   notifyReaderSuccess(decodedText)
 }
 

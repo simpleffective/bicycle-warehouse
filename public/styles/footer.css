@@ -1,0 +1,12 @@
+footer {
+  height: 20px;
+  width: 100%;
+  display: flex;
+  background-color: var(--pnimeet-green);
+  align-items: center;
+}
+
+footer img {
+  height: 80%;
+  margin-left: 5%;
+}

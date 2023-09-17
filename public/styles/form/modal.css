@@ -28,7 +28,8 @@
 }
 #reader {
   position: absolute;
-  display: block;
+  display: none;
+  flex-direction: column;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -38,12 +39,22 @@
   z-index: var(--z-index-qr-modal);
 }
 
-#reader > .quit-modal-button {
+/* #reader > .quit-modal-button {
   position: absolute;
   bottom:6%; left: 37%;
   width: 20%;
   background-color: black;
   color: white;
+  padding: 2.5%;
+  margin: 2%;
+  cursor: pointer;
+} */
+
+#reader > .quit-modal-button {
+  position: absolute;
+  bottom: 0 ; right: 0;
+  background: url('../../resources/x-button-icon.jpg') no-repeat;
+  background-size: cover;
   padding: 2.5%;
   margin: 2%;
   cursor: pointer;

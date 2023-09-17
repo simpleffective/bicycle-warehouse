@@ -7,7 +7,6 @@ export {
 const ROWS_PER_PAGE = 8;
 let currentPage = 1;  // initial page
 const numbers = document.getElementById('pagination-numbers-container');
-// const paginationLength = numbers.querySelectorAll('button').length
 const paginationLength = 5;
 const prev = document.getElementById('prev')
 const next = document.getElementById('next')
@@ -26,8 +25,6 @@ function init(numRows) {
 function drawNumberButtons() {
   
   numbers.innerHTML = '';
-  // let start = Math.max(1, currentPage - Math.floor(paginationLength / 2));
-  // let end = Math.min(numPages, start + paginationLength - 1);
 
   let start = currentPage - Math.floor(paginationLength / 2);
   let end = currentPage + Math.floor(paginationLength / 2);

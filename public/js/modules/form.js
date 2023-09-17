@@ -1,15 +1,37 @@
 import { init as initReader , readQR, stopQR } from "./qrScanner.js";
-import {notifyEntry} from "../main.js"
+import {debounce} from './util.js';
 export {init, notifyReaderSuccess}
 
-let bicycle_id = {
-  'name': 'QR code',
-  'value': ''
-};
-let bicycle_photo = {
-  'name': 'photo',
-  'value': () => document.querySelector('input[name="capture"]').value
-};
+const bicycle_photo = (function (){
+  let name = 'photo';
+  let value = '';
+  return {
+    getName() {
+      return name;
+    },
+    getValue() {
+      return document.querySelector('input[name="capture"]').value
+    },
+    setValue() {}
+  };
+})();
+
+const bicycle_id = (function (){
+  let name = 'QR code';
+  let value = '';
+  return {
+    getName() {
+      return name;
+    },
+    getValue() {
+      return value
+    },
+    setValue(v) {
+      value = v;
+    }
+  };
+})();
+
 
 function init(){  
   const formAvailble = initAddBicycleButton(false)
@@ -26,10 +48,8 @@ window.mobileAndTabletCheck = function() {
 };
 
 function initForm() {
-  // readQR_ready();
   // init form submittion
-  document.getElementById('bicycle-form').onsubmit = onFormSubmittion;
-  // init close button
+  document.getElementById('bicycle-form').onsubmit = debounce(onFormSubmittion);
   document.getElementById('quit-form').onclick = closeForm;
   // init barcode button
   document.getElementById('barcode-button').onclick = openScanner;
@@ -38,7 +58,7 @@ function initForm() {
 }
 
 function notifyReaderSuccess(decodedText) {
-  bicycle_id.value = decodedText;
+  bicycle_id.setValue(decodedText);
   let qr_container = document.getElementById('barcode-container');
   qr_container.classList.remove('uploaded-false');
   qr_container.classList.add('uploaded-true');
@@ -54,9 +74,8 @@ function onPhotoUpload() {
 function openScanner() {
   readQR()
   reader.style.position = 'absolute'
-  reader.style.display = 'block'
+  reader.style.display = 'flex'
   let quit_btn = document.createElement('button')
-  quit_btn.textContent = 'Quit'
   quit_btn.classList.add('quit-modal-button')
   quit_btn.onclick = closeScanner
   reader.appendChild(quit_btn)
@@ -84,15 +103,18 @@ async function onFormSubmittion(event) {
   event.preventDefault();
   
   // check visual inputs exist
-  // const visual_inputs = [bicycle_id, bicycle_photo]
-  // const missing = visual_inputs.find(x => x.value === '')
-  // if (missing !== undefined) {
-  //   alert(`Form is missing a valid ${missing.name}`)
-  //   return
-  // }
+  const visual_inputs = [bicycle_id, bicycle_photo]
+  const missing = visual_inputs.find(x => x.getValue() === '')
+  if (missing !== undefined) {
+    alert(`Form is missing a valid ${missing.getName()}`)
+    return
+  }
 
   const formData = new FormData(document.getElementById('bicycle-form'));
-  formData.append('id',bicycle_id.value)
+  formData.append('id', bicycle_id.getValue())
+  console.log(formData)
+  console.log(formData.capture)
+  console.log(formData.email)
 
   let URL = event.target.action
   let method = event.target.method
@@ -106,8 +128,8 @@ async function onFormSubmittion(event) {
 
     console.log('Form submission response:')
     response.json().then(data => console.table(data))
-    console.log('Restarting table...');
-    notifyEntry()
+    console.log('Restarting page');
+    window.location.reload()
 
   } else {
     console.error('Form submission failed:', response.statusText)

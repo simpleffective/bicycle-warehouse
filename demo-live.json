@@ -1,0 +1,550 @@
+{
+    "visual":{
+        "img_filename":"C:\Users\orenp\Documents\Projects\bicycle-warehouse\public\resources\bicycle-images\bike8.png",
+        "textId":"Aubrey Fortin's Bike"
+      },
+    "status":"done",
+    "person":"Aubrey Fortin",
+    "email":"aubrey.fortin@example.com",
+    "takenDate":"24-06-2023",
+    "maintainedDate": "03-09-2023"
+  },
+{
+    "visual":{
+        "img_filename":"C:\Users\orenp\Documents\Projects\bicycle-warehouse\public\resources\bicycle-images\bike8.png",
+        "textId":"Natã Pereira's Bike"
+      },
+    "status":"done",
+    "person":"Natã Pereira",
+    "email":"nata.pereira@example.com",
+    "takenDate":"16-09-2023",
+    "maintainedDate": "17-09-2023"
+  },
+{
+    "visual":{
+        "img_filename":"C:\Users\orenp\Documents\Projects\bicycle-warehouse\public\resources\bicycle-images\bike1.jpg",
+        "textId":"Angela Campos's Bike"
+      },
+    "status":"maintained",
+    "person":"Angela Campos",
+    "email":"angela.campos@example.com",
+    "takenDate":"19-07-2023",
+    "maintainedDate": "16-09-2023"
+  },
+{
+    "visual":{
+        "img_filename":"C:\Users\orenp\Documents\Projects\bicycle-warehouse\public\resources\bicycle-images\bike7.jpg",
+        "textId":"Rosa Kristensen's Bike"
+      },
+    "status":"done",
+    "person":"Rosa Kristensen",
+    "email":"rosa.kristensen@example.com",
+    "takenDate":"01-08-2023",
+    "maintainedDate": "06-08-2023"
+  },
+{
+    "visual":{
+        "img_filename":"C:\Users\orenp\Documents\Projects\bicycle-warehouse\public\resources\bicycle-images\bike6.jpg",
+        "textId":"David Oliver's Bike"
+      },
+    "status":"done",
+    "person":"David Oliver",
+    "email":"david.oliver@example.com",
+    "takenDate":"09-06-2023",
+    "maintainedDate": "23-06-2023"
+  },
+{
+    "visual":{
+        "img_filename":"C:\Users\orenp\Documents\Projects\bicycle-warehouse\public\resources\bicycle-images\bike7.jpg",
+        "textId":"یلدا محمدخان's Bike"
+      },
+    "status":"free",
+    "person":"یلدا محمدخان",
+    "email":"yld.mhmdkhn@example.com",
+    "takenDate":"&#8212",
+    "maintainedDate": "&#8212"
+  },
+{
+    "visual":{
+        "img_filename":"C:\Users\orenp\Documents\Projects\bicycle-warehouse\public\resources\bicycle-images\bike1.jpg",
+        "textId":"Daromir Yastrzhembskiy's Bike"
+      },
+    "status":"done",
+    "person":"Daromir Yastrzhembskiy",
+    "email":"daromir.yastrzhembskiy@example.com",
+    "takenDate":"30-06-2023",
+    "maintainedDate": "24-08-2023"
+  },
+{
+    "visual":{
+        "img_filename":"C:\Users\orenp\Documents\Projects\bicycle-warehouse\public\resources\bicycle-images\bike1.jpg",
+        "textId":"Abdullahi Storm's Bike"
+      },
+    "status":"done",
+    "person":"Abdullahi Storm",
+    "email":"abdullahi.storm@example.com",
+    "takenDate":"28-08-2023",
+    "maintainedDate": "09-09-2023"
+  },
+{
+    "visual":{
+        "img_filename":"C:\Users\orenp\Documents\Projects\bicycle-warehouse\public\resources\bicycle-images\bike6.jpg",
+        "textId":"Ápio Melo's Bike"
+      },
+    "status":"maintained",
+    "person":"Ápio Melo",
+    "email":"apio.melo@example.com",
+    "takenDate":"11-08-2023",
+    "maintainedDate": "22-08-2023"
+  },
+{
+    "visual":{
+        "img_filename":"C:\Users\orenp\Documents\Projects\bicycle-warehouse\public\resources\bicycle-images\bike5.jpg",
+        "textId":"Murat Elmastaşoğlu's Bike"
+      },
+    "status":"free",
+    "person":"Murat Elmastaşoğlu",
+    "email":"murat.elmastasoglu@example.com",
+    "takenDate":"&#8212",
+    "maintainedDate": "&#8212"
+  },
+{
+    "visual":{
+        "img_filename":"C:\Users\orenp\Documents\Projects\bicycle-warehouse\public\resources\bicycle-images\bike7.jpg",
+        "textId":"Margaretha Heitmann's Bike"
+      },
+    "status":"free",
+    "person":"Margaretha Heitmann",
+    "email":"margaretha.heitmann@example.com",
+    "takenDate":"&#8212",
+    "maintainedDate": "&#8212"
+  },
+{
+    "visual":{
+        "img_filename":"C:\Users\orenp\Documents\Projects\bicycle-warehouse\public\resources\bicycle-images\bike7.jpg",
+        "textId":"Oya Tanrıkulu's Bike"
+      },
+    "status":"maintained",
+    "person":"Oya Tanrıkulu",
+    "email":"oya.tanrikulu@example.com",
+    "takenDate":"02-08-2023",
+    "maintainedDate": "25-08-2023"
+  },
+{
+    "visual":{
+        "img_filename":"C:\Users\orenp\Documents\Projects\bicycle-warehouse\public\resources\bicycle-images\bike5.jpg",
+        "textId":"Abdelouahed Van Brummelen's Bike"
+      },
+    "status":"maintained",
+    "person":"Abdelouahed Van Brummelen",
+    "email":"abdelouahed.vanbrummelen@example.com",
+    "takenDate":"15-07-2023",
+    "maintainedDate": "21-07-2023"
+  },
+{
+    "visual":{
+        "img_filename":"C:\Users\orenp\Documents\Projects\bicycle-warehouse\public\resources\bicycle-images\bike1.jpg",
+        "textId":"Alexander Pedersen's Bike"
+      },
+    "status":"maintained",
+    "person":"Alexander Pedersen",
+    "email":"alexander.pedersen@example.com",
+    "takenDate":"09-06-2023",
+    "maintainedDate": "16-09-2023"
+  },
+{
+    "visual":{
+        "img_filename":"C:\Users\orenp\Documents\Projects\bicycle-warehouse\public\resources\bicycle-images\bike6.jpg",
+        "textId":"Roberto Day's Bike"
+      },
+    "status":"free",
+    "person":"Roberto Day",
+    "email":"roberto.day@example.com",
+    "takenDate":"&#8212",
+    "maintainedDate": "&#8212"
+  },
+{
+    "visual":{
+        "img_filename":"C:\Users\orenp\Documents\Projects\bicycle-warehouse\public\resources\bicycle-images\bike4.jpg",
+        "textId":"Greta Sandberg's Bike"
+      },
+    "status":"free",
+    "person":"Greta Sandberg",
+    "email":"greta.sandberg@example.com",
+    "takenDate":"&#8212",
+    "maintainedDate": "&#8212"
+  },
+{
+    "visual":{
+        "img_filename":"C:\Users\orenp\Documents\Projects\bicycle-warehouse\public\resources\bicycle-images\bike2.jpg",
+        "textId":"Daryl Larson's Bike"
+      },
+    "status":"free",
+    "person":"Daryl Larson",
+    "email":"daryl.larson@example.com",
+    "takenDate":"&#8212",
+    "maintainedDate": "&#8212"
+  },
+{
+    "visual":{
+        "img_filename":"C:\Users\orenp\Documents\Projects\bicycle-warehouse\public\resources\bicycle-images\bike4.jpg",
+        "textId":"Lauri Hokkanen's Bike"
+      },
+    "status":"maintained",
+    "person":"Lauri Hokkanen",
+    "email":"lauri.hokkanen@example.com",
+    "takenDate":"18-06-2023",
+    "maintainedDate": "01-08-2023"
+  },
+{
+    "visual":{
+        "img_filename":"C:\Users\orenp\Documents\Projects\bicycle-warehouse\public\resources\bicycle-images\bike7.jpg",
+        "textId":"Fedora Bazhan's Bike"
+      },
+    "status":"maintained",
+    "person":"Fedora Bazhan",
+    "email":"fedora.bazhan@example.com",
+    "takenDate":"21-06-2023",
+    "maintainedDate": "21-07-2023"
+  },
+{
+    "visual":{
+        "img_filename":"C:\Users\orenp\Documents\Projects\bicycle-warehouse\public\resources\bicycle-images\bike8.png",
+        "textId":"Abhijith Kaur's Bike"
+      },
+    "status":"maintained",
+    "person":"Abhijith Kaur",
+    "email":"abhijith.kaur@example.com",
+    "takenDate":"18-07-2023",
+    "maintainedDate": "14-08-2023"
+  },
+{
+    "visual":{
+        "img_filename":"C:\Users\orenp\Documents\Projects\bicycle-warehouse\public\resources\bicycle-images\bike1.jpg",
+        "textId":"Elly Lopez's Bike"
+      },
+    "status":"maintained",
+    "person":"Elly Lopez",
+    "email":"elly.lopez@example.com",
+    "takenDate":"07-08-2023",
+    "maintainedDate": "22-08-2023"
+  },
+{
+    "visual":{
+        "img_filename":"C:\Users\orenp\Documents\Projects\bicycle-warehouse\public\resources\bicycle-images\bike1.jpg",
+        "textId":"Rubén Pérez's Bike"
+      },
+    "status":"free",
+    "person":"Rubén Pérez",
+    "email":"ruben.perez@example.com",
+    "takenDate":"&#8212",
+    "maintainedDate": "&#8212"
+  },
+{
+    "visual":{
+        "img_filename":"C:\Users\orenp\Documents\Projects\bicycle-warehouse\public\resources\bicycle-images\bike1.jpg",
+        "textId":"Oğuzhan Polat's Bike"
+      },
+    "status":"maintained",
+    "person":"Oğuzhan Polat",
+    "email":"oguzhan.polat@example.com",
+    "takenDate":"16-08-2023",
+    "maintainedDate": "01-09-2023"
+  },
+{
+    "visual":{
+        "img_filename":"C:\Users\orenp\Documents\Projects\bicycle-warehouse\public\resources\bicycle-images\bike7.jpg",
+        "textId":"Basile David's Bike"
+      },
+    "status":"free",
+    "person":"Basile David",
+    "email":"basile.david@example.com",
+    "takenDate":"&#8212",
+    "maintainedDate": "&#8212"
+  },
+{
+    "visual":{
+        "img_filename":"C:\Users\orenp\Documents\Projects\bicycle-warehouse\public\resources\bicycle-images\bike7.jpg",
+        "textId":"Fillip Bøen's Bike"
+      },
+    "status":"free",
+    "person":"Fillip Bøen",
+    "email":"fillip.boen@example.com",
+    "takenDate":"&#8212",
+    "maintainedDate": "&#8212"
+  },
+{
+    "visual":{
+        "img_filename":"C:\Users\orenp\Documents\Projects\bicycle-warehouse\public\resources\bicycle-images\bike6.jpg",
+        "textId":"Cleonice Rezende's Bike"
+      },
+    "status":"maintained",
+    "person":"Cleonice Rezende",
+    "email":"cleonice.rezende@example.com",
+    "takenDate":"03-09-2023",
+    "maintainedDate": "05-09-2023"
+  },
+{
+    "visual":{
+        "img_filename":"C:\Users\orenp\Documents\Projects\bicycle-warehouse\public\resources\bicycle-images\bike4.jpg",
+        "textId":"Abdirahman Rage's Bike"
+      },
+    "status":"free",
+    "person":"Abdirahman Rage",
+    "email":"abdirahman.rage@example.com",
+    "takenDate":"&#8212",
+    "maintainedDate": "&#8212"
+  },
+{
+    "visual":{
+        "img_filename":"C:\Users\orenp\Documents\Projects\bicycle-warehouse\public\resources\bicycle-images\bike3.jpg",
+        "textId":"Fitan Anchan's Bike"
+      },
+    "status":"done",
+    "person":"Fitan Anchan",
+    "email":"fitan.anchan@example.com",
+    "takenDate":"31-08-2023",
+    "maintainedDate": "11-09-2023"
+  },
+{
+    "visual":{
+        "img_filename":"C:\Users\orenp\Documents\Projects\bicycle-warehouse\public\resources\bicycle-images\bike2.jpg",
+        "textId":"سینا قاسمی's Bike"
+      },
+    "status":"free",
+    "person":"سینا قاسمی",
+    "email":"syn.qsmy@example.com",
+    "takenDate":"&#8212",
+    "maintainedDate": "&#8212"
+  },
+{
+    "visual":{
+        "img_filename":"C:\Users\orenp\Documents\Projects\bicycle-warehouse\public\resources\bicycle-images\bike6.jpg",
+        "textId":"Latife Özbey's Bike"
+      },
+    "status":"maintained",
+    "person":"Latife Özbey",
+    "email":"latife.ozbey@example.com",
+    "takenDate":"22-08-2023",
+    "maintainedDate": "14-09-2023"
+  },
+{
+    "visual":{
+        "img_filename":"C:\Users\orenp\Documents\Projects\bicycle-warehouse\public\resources\bicycle-images\bike4.jpg",
+        "textId":"Amy Tvenge's Bike"
+      },
+    "status":"free",
+    "person":"Amy Tvenge",
+    "email":"amy.tvenge@example.com",
+    "takenDate":"&#8212",
+    "maintainedDate": "&#8212"
+  },
+{
+    "visual":{
+        "img_filename":"C:\Users\orenp\Documents\Projects\bicycle-warehouse\public\resources\bicycle-images\bike8.png",
+        "textId":"Jack Patterson's Bike"
+      },
+    "status":"maintained",
+    "person":"Jack Patterson",
+    "email":"jack.patterson@example.com",
+    "takenDate":"28-06-2023",
+    "maintainedDate": "30-06-2023"
+  },
+{
+    "visual":{
+        "img_filename":"C:\Users\orenp\Documents\Projects\bicycle-warehouse\public\resources\bicycle-images\bike4.jpg",
+        "textId":"دانیال احمدی's Bike"
+      },
+    "status":"maintained",
+    "person":"دانیال احمدی",
+    "email":"dnyl.hmdy@example.com",
+    "takenDate":"14-08-2023",
+    "maintainedDate": "06-09-2023"
+  },
+{
+    "visual":{
+        "img_filename":"C:\Users\orenp\Documents\Projects\bicycle-warehouse\public\resources\bicycle-images\bike2.jpg",
+        "textId":"Vilma Valli's Bike"
+      },
+    "status":"maintained",
+    "person":"Vilma Valli",
+    "email":"vilma.valli@example.com",
+    "takenDate":"01-07-2023",
+    "maintainedDate": "21-08-2023"
+  },
+{
+    "visual":{
+        "img_filename":"C:\Users\orenp\Documents\Projects\bicycle-warehouse\public\resources\bicycle-images\bike8.png",
+        "textId":"Duane Gardner's Bike"
+      },
+    "status":"maintained",
+    "person":"Duane Gardner",
+    "email":"duane.gardner@example.com",
+    "takenDate":"21-07-2023",
+    "maintainedDate": "25-08-2023"
+  },
+{
+    "visual":{
+        "img_filename":"C:\Users\orenp\Documents\Projects\bicycle-warehouse\public\resources\bicycle-images\bike3.jpg",
+        "textId":"Jeanne Lavigne's Bike"
+      },
+    "status":"free",
+    "person":"Jeanne Lavigne",
+    "email":"jeanne.lavigne@example.com",
+    "takenDate":"&#8212",
+    "maintainedDate": "&#8212"
+  },
+{
+    "visual":{
+        "img_filename":"C:\Users\orenp\Documents\Projects\bicycle-warehouse\public\resources\bicycle-images\bike3.jpg",
+        "textId":"Guy Byrd's Bike"
+      },
+    "status":"free",
+    "person":"Guy Byrd",
+    "email":"guy.byrd@example.com",
+    "takenDate":"&#8212",
+    "maintainedDate": "&#8212"
+  },
+{
+    "visual":{
+        "img_filename":"C:\Users\orenp\Documents\Projects\bicycle-warehouse\public\resources\bicycle-images\bike1.jpg",
+        "textId":"Milana Bergan's Bike"
+      },
+    "status":"done",
+    "person":"Milana Bergan",
+    "email":"milana.bergan@example.com",
+    "takenDate":"14-08-2023",
+    "maintainedDate": "15-08-2023"
+  },
+{
+    "visual":{
+        "img_filename":"C:\Users\orenp\Documents\Projects\bicycle-warehouse\public\resources\bicycle-images\bike4.jpg",
+        "textId":"Scott Harvey's Bike"
+      },
+    "status":"maintained",
+    "person":"Scott Harvey",
+    "email":"scott.harvey@example.com",
+    "takenDate":"05-09-2023",
+    "maintainedDate": "06-09-2023"
+  },
+{
+    "visual":{
+        "img_filename":"C:\Users\orenp\Documents\Projects\bicycle-warehouse\public\resources\bicycle-images\bike3.jpg",
+        "textId":"Rachel Heen's Bike"
+      },
+    "status":"free",
+    "person":"Rachel Heen",
+    "email":"rachel.heen@example.com",
+    "takenDate":"&#8212",
+    "maintainedDate": "&#8212"
+  },
+{
+    "visual":{
+        "img_filename":"C:\Users\orenp\Documents\Projects\bicycle-warehouse\public\resources\bicycle-images\bike3.jpg",
+        "textId":"Leo Koivisto's Bike"
+      },
+    "status":"maintained",
+    "person":"Leo Koivisto",
+    "email":"leo.koivisto@example.com",
+    "takenDate":"30-06-2023",
+    "maintainedDate": "02-09-2023"
+  },
+{
+    "visual":{
+        "img_filename":"C:\Users\orenp\Documents\Projects\bicycle-warehouse\public\resources\bicycle-images\bike5.jpg",
+        "textId":"علیرضا نجاتی's Bike"
+      },
+    "status":"maintained",
+    "person":"علیرضا نجاتی",
+    "email":"aalyrd.njty@example.com",
+    "takenDate":"03-08-2023",
+    "maintainedDate": "16-09-2023"
+  },
+{
+    "visual":{
+        "img_filename":"C:\Users\orenp\Documents\Projects\bicycle-warehouse\public\resources\bicycle-images\bike7.jpg",
+        "textId":"Claude Jacobs's Bike"
+      },
+    "status":"free",
+    "person":"Claude Jacobs",
+    "email":"claude.jacobs@example.com",
+    "takenDate":"&#8212",
+    "maintainedDate": "&#8212"
+  },
+{
+    "visual":{
+        "img_filename":"C:\Users\orenp\Documents\Projects\bicycle-warehouse\public\resources\bicycle-images\bike4.jpg",
+        "textId":"Veera Kilpela's Bike"
+      },
+    "status":"maintained",
+    "person":"Veera Kilpela",
+    "email":"veera.kilpela@example.com",
+    "takenDate":"13-07-2023",
+    "maintainedDate": "11-08-2023"
+  },
+{
+    "visual":{
+        "img_filename":"C:\Users\orenp\Documents\Projects\bicycle-warehouse\public\resources\bicycle-images\bike5.jpg",
+        "textId":"Josefine Olsen's Bike"
+      },
+    "status":"maintained",
+    "person":"Josefine Olsen",
+    "email":"josefine.olsen@example.com",
+    "takenDate":"23-07-2023",
+    "maintainedDate": "24-08-2023"
+  },
+{
+    "visual":{
+        "img_filename":"C:\Users\orenp\Documents\Projects\bicycle-warehouse\public\resources\bicycle-images\bike3.jpg",
+        "textId":"Roman Li's Bike"
+      },
+    "status":"maintained",
+    "person":"Roman Li",
+    "email":"roman.li@example.com",
+    "takenDate":"04-07-2023",
+    "maintainedDate": "21-07-2023"
+  },
+{
+    "visual":{
+        "img_filename":"C:\Users\orenp\Documents\Projects\bicycle-warehouse\public\resources\bicycle-images\bike2.jpg",
+        "textId":"Mia Ramos's Bike"
+      },
+    "status":"done",
+    "person":"Mia Ramos",
+    "email":"mia.ramos@example.com",
+    "takenDate":"09-06-2023",
+    "maintainedDate": "16-08-2023"
+  },
+{
+    "visual":{
+        "img_filename":"C:\Users\orenp\Documents\Projects\bicycle-warehouse\public\resources\bicycle-images\bike3.jpg",
+        "textId":"Odinec Grobelskiy's Bike"
+      },
+    "status":"maintained",
+    "person":"Odinec Grobelskiy",
+    "email":"odinec.grobelskiy@example.com",
+    "takenDate":"14-06-2023",
+    "maintainedDate": "03-08-2023"
+  },
+{
+    "visual":{
+        "img_filename":"C:\Users\orenp\Documents\Projects\bicycle-warehouse\public\resources\bicycle-images\bike1.jpg",
+        "textId":"Magamir Shekera's Bike"
+      },
+    "status":"maintained",
+    "person":"Magamir Shekera",
+    "email":"magamir.shekera@example.com",
+    "takenDate":"16-07-2023",
+    "maintainedDate": "11-08-2023"
+  },
+{
+    "visual":{
+        "img_filename":"C:\Users\orenp\Documents\Projects\bicycle-warehouse\public\resources\bicycle-images\bike2.jpg",
+        "textId":"Pablo Fleury's Bike"
+      },
+    "status":"done",
+    "person":"Pablo Fleury",
+    "email":"pablo.fleury@example.com",
+    "takenDate":"03-08-2023",
+    "maintainedDate": "21-08-2023"
+  }

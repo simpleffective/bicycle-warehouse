@@ -1,19 +1,22 @@
 
 const fs = require('fs')
 const path = require('path')
-const { getDefaultHighWaterMark } = require('stream')
-
+const { getFormattedDate } = require(path.join(process.env.ROOT, 'util.js'))
 const data_path = '/demo-data/'
 
-function getTableData() {
-  return fs.promises.readFile(path.join(__dirname, data_path ,'demo-live.json'), {encoding: 'utf8'}, (err, data) => {
-    return '[' + data + ']'
-  })
+async function getTableData() {
+  try {
+    const res= '[' + (await fs.promises.readFile(path.join(__dirname , data_path ,'demo-live.json'), 'utf8')).slice(0,-1) + ']';
+    console.log(res);
+    return res;
+  } catch (error) {
+    console.error('error reading file (DB)')
+  }
 }
 
 async function createEntry(entry) {
-  const formattedEntry = JSON.stringify(parseEntry(entry))
-  await saveDataToFile(path.join(__dirname, data_path, 'demo-live.json'), formattedEntry)
+  const formattedEntry = parseEntry(entry)
+  await saveDataToFile(path.join(__dirname, data_path, 'demo-live.json'), JSON.stringify(formattedEntry))
   return formattedEntry
 }
 
@@ -27,11 +30,8 @@ async function saveDataToFile(filename, data) {
       await fs.promises.writeFile(filename, '', 'utf8');
     }
     await fs.promises.appendFile(filename, data, 'utf8');
-    await fs.promises.appendFile(filename, ',\n', 'utf8');
-    console.log(
-    `Data: ${data}
-     Saved to ${filename}`
-     );
+    await fs.promises.appendFile(filename, ',', 'utf8');
+
   } catch (error) {
     console.error('Error:', error);
   }
@@ -43,22 +43,12 @@ function parseEntry(entry) {
     "img_filename": entry.img_filename,
     "textId": entry.textId,
     },
-    "status": entry.person? 'בטיפול' : 'פנויות',
+    "status": 'maintained', 
     "person": entry.person,
     "email": `${entry.email.split('@')[0]}&#8203@${entry.email.split('@')[1]}`,
-    "takenDate": getToday(),
-    "maintainedDate":"&mdash"
+    "takenDate": getFormattedDate(),
+    "maintainedDate":"&#8212"
   }
-}
-
-function getToday() {
-  const today = new Date();
-  const year = today.getFullYear();
-  const month = today.getMonth() + 1; // Months are 0-based, so add 1
-  const day = today.getDate();
-
-  // Create a formatted string in dd-mm-yyyy format
-  return `${day.toString().padStart(2, '0')}-${month.toString().padStart(2, '0')}-${year}`;
 }
 
 module.exports.getTableData = getTableData

@@ -1,4 +1,6 @@
 require('dotenv').config()
+const {init: initData} = require('./models/demo-data/generateDemoData.js')
+initData()
 
 const {
   getTableData,
@@ -12,6 +14,7 @@ const BASE = `http://localhost:${process.env.PORT}`
 
 const server = require('http').createServer((req,res) => {
   console.log(req.url)
+
   // Build the URL object
   let parsedUrl = new URL(req.url, BASE);
   

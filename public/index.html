@@ -3,14 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <title>Bicycle Warehouse</title>
-  <link rel="stylesheet" href="styles/general.css">
-  <link rel="stylesheet" href="styles/header.css">
-  <link rel="stylesheet" href="styles/table.css">
-  <link rel="stylesheet" href="styles/table-actions.css">
-  <link rel="stylesheet" href="styles/form/modal.css">
-  <link rel="stylesheet" href="styles/form/form.css">
-  <link rel="stylesheet" href="styles/form/visual-input.css">
-  <link rel="stylesheet" href="styles/pagination.css">
+  <link rel="stylesheet" href="public/styles/general.css">
+  <link rel="stylesheet" href="public/styles/header.css">
+  <link rel="stylesheet" href="public/styles/footer.css">
+  <link rel="stylesheet" href="public/styles/table.css">
+  <link rel="stylesheet" href="public/styles/table-actions.css">
+  <link rel="stylesheet" href="public/styles/form/modal.css">
+  <link rel="stylesheet" href="public/styles/form/form.css">
+  <link rel="stylesheet" href="public/styles/form/visual-input.css">
+  <link rel="stylesheet" href="public/styles/pagination.css">
   <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
   <meta name="viewport">
   <!-- <script src="https://accounts.google.com/gsi/client" async></script> -->
@@ -18,9 +19,13 @@
 <body>
   
   <header>
-    <h1 class="website-title">
-      מחסן אופניים
-    </h1>
+    <div id="title-container">
+      <img src="public\resources\bicycle-icon3.png" alt="sfasdsada">
+      <h1 id="website-title">
+        מחסן אופניים
+      </h1>
+      <img src="public\resources\bicycle-icon3.png" alt="sfasdsada">
+    </div>
 
   </header>
 
@@ -29,7 +34,7 @@
 
       <!-- Plus Button -->
       <button id="add-bicycle-button">
-        <img src="resources/plus-icon-13062.png">
+        <img src="public/resources/plus-icon-13062.png">
       </button>
 
       <!-- Blur Filter -->
@@ -116,15 +121,15 @@
               </span>
               <div id="filter-status-popup" class="table-action-focus" tabindex="0">
                 <div>
-                  <input type="checkbox" id="status-available" tabindex="-1" value="פנויות" class="table-action-input" checked>
+                  <input type="checkbox" id="status-available" tabindex="-1" value="free" class="table-action-input" checked>
                   <label for="status-displayed">פנויות</label>
                 </div> 
                 <div>
-                  <input type="checkbox" id="status-maintained" value="בטיפול" class="table-action-input" checked>
+                  <input type="checkbox" id="status-maintained" value="maintained" class="table-action-input" checked>
                   <label for="status-maintained">בטיפול</label>
                 </div>
                 <div>
-                  <input type="checkbox" id="status-done" value="סיימו" class="table-action-input" checked>
+                  <input type="checkbox" id="status-done" value="done" class="table-action-input" checked>
                   <label for="status-done">סיימו</label>
                 </div>
               </div>
@@ -144,48 +149,6 @@
           </tr>
         </thead>
         <tbody> 
-          <tr>
-            <td>
-              <div class="visual-info-container">
-                <span class="bicycle-color"></span>
-                <img class="bicycle-image" src="./resources/red-schwinn" alt="">
-                <span class="bicycle-text">האופניים האדומות המדהימות ביותר שיש</span>
-              </div>
-              <div class="image-popup">
-                <img class="bicycle-image" src="./resources/red-schwinn" alt="">
-              </div>
-            </td>
-            <td>
-              <div class="status-container">
-                <span class="status-indicator yGrad"></span>
-                <span class="status">בטיפול</span>
-              </div>
-            </td>
-            <td>אורן פנקס</td>
-            <td>orenp95&#8203@gmail.com</td>
-            <td>15/06/2023</td>
-            <td scope="row">11/07/2023</td>
-          </tr>
-          <tr>
-            <td>
-              <div class="visual-info-container">
-                <span class="bicycle-color"></span>
-                <img class="bicycle-image" src="./resources/red-schwinn" alt="">
-                <span class="bicycle-text">Trek</span>
-              </div>
-            </td>
-            <td>
-              <div class="status-container">
-                <span class="status-indicator yGrad"></span>
-                <span class="status">בטיפול</span>
-              </div>
-            </td>
-            <td>אורן פנקס</td>
-            <td>orenp95&#8203@gmail.com</td>
-            <td>15/06/2023</td>
-            <td scope="row">11/07/2023</td>
-          </tr>
-         
         </tbody>
       </table>
 
@@ -197,20 +160,21 @@
           <button>1</button>
           <button>2</button>
           <button>3</button>
-          <button>4</button>
-          <button>5</button>
-          <button>6</button>
-          <button>7</button>
           -->
         </div>
         <button id="next" value=">"></button>
       </div>
     
     </section>
+
   </main>
 
-  <footer>
-  </footer>
-  <script type="module" src="./js/main.js"></script>
+  <!-- <footer>
+    <img src="public/resources/pnimeet-icon.png" alt="פנימית - סדנת אופניים שיתופית">
+  </footer> -->
+  
 </body>
+
+<script type="module" src="./public/js/main.js"></script>
+
 </html>

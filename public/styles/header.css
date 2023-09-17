@@ -1,14 +1,51 @@
 header{
+  direction: rtl;
   position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: var(--pnimeet-green);
   height: 80px;
   top:0; left: 0; right: 0;
   text-align: center;
   z-index: var(--z-index-header);
-  display: grid;
-  place-items: center;
 }
-.website-title{
+
+#website-title{
   color:var(--pnimeet-yellow);  
-  font-size: 2em;
+  font-size: 2.3em;
+  text-decoration: underline;
+}
+
+#title-container {
+  display: flex;
+  align-items: center;
+  height: 100%;;
+  gap: 10px;
+}
+
+#title-container > img {
+  object-position: center;
+  height: 50%;
+  transform: translateY(10%);
+}
+
+@media screen and (min-width: 1000px) {
+  header { 
+    height: 100px;
+  }
+
+  body {
+    margin-top: 30px ;
+  }
+
+  #website-title {
+    font-size: 3.5em;
+  }
+
+  #title-container > img {
+    object-position: center;
+    height: 65%;
+  }
+  
 }

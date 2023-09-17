@@ -6,7 +6,6 @@ section {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  max-width: 1300px;
 }
 
 .bicycle-table{
@@ -53,7 +52,7 @@ th {
   padding: 0.5em 0px;
   font-weight: 600;
 }
-  td,th {
+td,th {
   height: 1px;
   width: 100%;
   border: 1px solid #0F6D3553;
@@ -66,18 +65,12 @@ th {
   text-overflow: ellipsis;
   white-space: nowrap;
   border: 1px solid #444;
+  aspect-ratio: 5/3;
+  background-position: center;
+  background-size: cover;
 }
 td:first-of-type {
   position: relative;
-}
-.image-popup {
-  display: none;
-  position: absolute;
-  top: 50%;
-  right: 50%;
-  width: 200%;
-  border: 1px solid white;
-  z-index: var(--z-index-image-popup);
 }
 .bicycle-text {
   position: absolute;
@@ -89,16 +82,6 @@ td:first-of-type {
   background-color: #757575aa;
   border: 1px solid #444;
   text-shadow: 1px 1px 1px black;
-}
-.bicycle-color{
-  position: absolute;
-  top: 1vh;
-  right: 1vh;
-  width: 15%;
-  aspect-ratio: 1/1;
-  border-radius: 50%;
-  border: 1px solid black;
-  background-color: rgb(220,50,0);  
 }
 .status-container{
   display: flex;
@@ -139,4 +122,17 @@ td:first-of-type {
 }
 .gGrad{
   background: radial-gradient(#ffff40, #40c820 50%);
+}
+#empty-table{
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0F6D3553;
+  border-radius: 0 0 20px 20px;
+  font-size: 1.5em;
+  color: rgb(50, 50, 50);
+  transition: transform 0.5 ease-out;
+  z-index: -1;
 }
