@@ -10,7 +10,7 @@ module.exports = {init}
 
 async function init() {
   let users;
-  await fetch(`https://randomuser.me/api/?results=${numUsers}}`)
+  await fetch(`https://randomuser.me/api/?results=${numUsers}`)
     .then(res => res.json())
     .then(data => users = data.results)
   
@@ -57,7 +57,7 @@ const randomBikeImg = (function () {
   const files = fs.readdirSync(folderPath)
   return function () {
     const randomFile = files[Math.floor(Math.random() * files.length)];
-    return path.join(`\\public\\resources\\bicycle-images\\`, randomFile)
+    return '/public/resources/bicycle-images/' + randomFile;
   }
 })();
 
