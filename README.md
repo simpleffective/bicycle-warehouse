@@ -34,6 +34,7 @@
   <p align="center">
     A mockup of a bicycle maintenance tracker list. <br>
     This project my first step in Web Development. project, practiced with the intention of learning Vanilla HTML, CSS, JavaScript, and Node.js. <br>
+I want to become an expert Web Developer in the future. <br> <br>
     This project was started with a real-life bicycle workshop in mind (located in TLV) and hopefully will launch in the near future, once I get good enough at Web Development 😁
   </p>
 </div>
@@ -78,6 +79,37 @@
 * ![HTML5][HTML5-shield]
 * ![JavaScript][JS-shield]
 * ![NodeJS][Nodejs-shield]
+
+### What I Learned
+
+I learned from scratch the following concepts:
+
+1. JavaScript basics:
+* Variables, Scopes, Hoisting, TDZ
+* Closures
+* IIFE
+* Promises, fetch API, async await
+* DOM structure
+* Responsive Event-Based design
+* The Event Loop
+
+2. HTML5 and CSS basics
+* Page structure
+* HTML Forms
+* Accessibility
+* CSS Box Model 
+* CSS Grid, CSS Flexbox
+* CSS Animations
+* CSS variables, units, functions
+
+3. Node.js
+* Modules
+* Handling HTTP requests
+* Basic server side routing and structure
+
+
+I'm continuing my studying in order to become an expert Web Developer by studying to strengthen my basics further, and have started learning modern technologies such as React, Next.js, Express.js, and more.
+
   
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
