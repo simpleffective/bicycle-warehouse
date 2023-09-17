@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "live": "nodemon server.js"
+    "live": "nodemon server.js",
+    "build": "node server.js"
   },
   "nodemonConfig": {
     "ignore": ["./public/uploads/", "public/resources/", "./models/demo-data/*.json"]
